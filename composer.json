@@ -1,0 +1,124 @@
+{
+    "name": "vatu/base-theme",
+    "type": "wordpress-theme",
+    "license": "proprietary",
+    "description": "Vatu Base theme.",
+    "homepage": "https://vatu.dev",
+    "readme": "https://github.com/vatu-team/base-theme/blob/trunk/readme.md",
+    "authors": [
+        {
+            "name": "Vatu",
+            "email": "hello@vatu.dev",
+            "homepage": "https://vatu.dev",
+            "role": "Agency"
+        }
+    ],
+    "keywords": [
+        "website",
+        "wordpress",
+        "theme"
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org"
+        }
+    ],
+    "require": {
+        "php": "^8.3",
+        "composer/installers": "^2.3.0",
+        "madewithlove/license-checker": "^1.6",
+        "thoughtsideas/wp-infrastructure": "^0.1.0"
+    },
+    "require-dev": {
+        "captainhook/captainhook": "^5.23.5",
+        "captainhook/hook-installer": "^1.0.3",
+        "johnpbloch/wordpress": "^6.6.2",
+        "wpackagist-plugin/create-block-theme": "^2.5.0",
+        "wpackagist-plugin/query-monitor": "^3.16.4"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/installers": true,
+            "johnpbloch/wordpress-core-installer": true,
+            "captainhook/hook-installer": true,
+            "cweagans/composer-patches": true
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Client\\BaseTheme\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Client\\BaseTheme\\Tests\\Unit\\": "tests/php/Unit"
+        }
+    },
+    "extra": {
+        "installer-paths": {
+            "vendor/mu-plugins/{$name}/": [
+                "type:wordpress-muplugin"
+            ],
+            "vendor/plugins/{$name}/": [
+                "type:wordpress-plugin"
+            ],
+            "vendor/themes/{$name}/": [
+                "type:wordpress-theme"
+            ]
+        },
+        "wordpress-install-dir": "vendor/wordpress/wordpress"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "@composer run tools"
+        ],
+        "post-update-cmd": [
+            "@composer run tools"
+        ],
+        "fix": [
+            "@composer fix:coding-standards"
+        ],
+        "fix:coding-standards": [
+            "./tools/vendor/bin/phpcbf"
+        ],
+        "test": [
+            "@composer test:license",
+            "@composer test:lint",
+            "@composer test:security",
+            "@composer test:unit",
+            "@composer test:analysis"
+        ],
+        "test:license": "vendor/bin/license-checker check",
+        "test:lint": [
+            "@composer validate --ansi --strict",
+            "@composer test:lint:php",
+            "@composer test:lint:coding-standards"
+        ],
+        "test:lint:php": [
+            "./tools/vendor/bin/parallel-lint --exclude */vendor ./src",
+            "./tools/vendor/bin/parallel-lint --exclude */vendor ./tests"
+        ],
+        "test:lint:coding-standards": [
+            "./tools/vendor/bin/phpcs -n"
+        ],
+        "test:security": [
+            "@composer audit --ansi"
+        ],
+        "test:unit": [
+            "./tools/vendor/bin/phpunit -c ./phpunit.dist.xml --testsuite unit"
+        ],
+        "test:analysis": [
+            "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
+        ],
+        "tools": [
+            "@composer install --working-dir=tools",
+            "@composer run post-install-cmd --working-dir=tools"
+        ]
+    }
+}

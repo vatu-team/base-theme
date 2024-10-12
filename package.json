@@ -1,0 +1,22 @@
+{
+    "name": "base-theme",
+    "version": "1.0.0",
+    "description": "NPM configuration for Base Theme development.",
+    "author": "Vatu <info@vatu.dev>",
+    "license": "MIT",
+    "engines": {
+        "npm": "^10.1.0",
+        "node": "^20.9.0"
+    },
+    "scripts": {
+        "start": "wp-scripts start",
+        "build": "wp-scripts build",
+        "wp-env": "wp-env"
+    },
+    "devDependencies": {
+        "@wordpress/env": "^9.8.0",
+        "@wordpress/scripts": "^27.8.0",
+        "path": "^0.12.7",
+        "webpack-remove-empty-scripts": "^1.0.4"
+    }
+}

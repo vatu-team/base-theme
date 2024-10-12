@@ -1,0 +1,22 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/theme.json",
+    "version": 3,
+    "title": "Base Theme",
+    "description": "Site styles for base theme..",
+    "patterns": [],
+    "settings": {},
+    "styles": {},
+    "templateParts": [
+        {
+            "area": "header",
+            "name": "site-header",
+            "title": "Site Header"
+        },
+        {
+            "area": "footer",
+            "name": "site-footer",
+            "title": "Site Footer"
+        }
+    ],
+    "customTemplates": []
+}
