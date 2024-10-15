@@ -33,6 +33,7 @@ final class Theme extends ServiceProvider implements Main
 	 */
 	protected array $service_collection = [
 		Domain\EditorScript::class,
+		Domain\Openverse::class,
 	];
 
 	/**
