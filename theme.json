@@ -24,6 +24,10 @@
             "defaultGradients": false,
             "defaultPalette": false
         },
+        "layout": {
+            "contentSize": "clamp(288px, 80vw, 750px)",
+            "wideSize": "clamp(288px, 90vw, 1200px)"
+        },
         "position": {
             "sticky": true
         },
@@ -49,7 +53,14 @@
             "textTransform": false,
             "writingMode": false
         }
-    "styles": {},
+    },
+    "styles": {
+        "typography": {
+            "fontSize": "125%",
+            "lineHeight": "1.5",
+            "letterSpacing": "0"
+        }
+    },
     "templateParts": [
         {
             "area": "header",
