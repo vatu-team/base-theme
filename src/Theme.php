@@ -24,7 +24,7 @@ final class Theme extends ServiceProvider implements Main
 	 */
 	protected string $registration_action = 'after_setup_theme';
 
-	protected string $identifier = 'base';
+	protected string $identifier = 'Base';
 
 	/**
 	 * Service to be loaded.
@@ -46,10 +46,10 @@ final class Theme extends ServiceProvider implements Main
 	public function bootstrap(): void
 	{
 		\add_action(
-			$this->registration_action,
-			[ $this, 'initializeServiceCollection' ],
-			10,
-			0
+			hook_name: $this->registration_action,
+			callback: [ $this, 'initializeServiceCollection' ],
+			priority: 10,
+			accepted_args: 0
 		);
 	}
 }
