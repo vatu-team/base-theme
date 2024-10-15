@@ -4,7 +4,51 @@
     "title": "Base Theme",
     "description": "Site styles for base theme..",
     "patterns": [],
-    "settings": {},
+    "settings": {
+        "appearanceTools": false,
+        "useRootPaddingAwareAlignments": true,
+        "border": {
+            "color": false,
+            "radius": false,
+            "style": false,
+            "width": false
+        },
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false,
+            "custom": false,
+            "customDuotone": false,
+            "customGradient": false,
+            "defaultDuotone": false,
+            "defaultGradients": false,
+            "defaultPalette": false
+        },
+        "position": {
+            "sticky": true
+        },
+        "spacing": {
+            "blockGap": false,
+            "customSpacingSize": false,
+            "margin": false,
+            "padding": false
+        },
+        "shadow": {
+            "defaultPresets": false
+        },
+        "typography": {
+            "customFontSize": false,
+            "defaultFontSizes": false,
+            "dropCap": false,
+            "fontStyle": false,
+            "fontWeight": false,
+            "letterSpacing": false,
+            "lineHeight": false,
+            "textColumns": false,
+            "textDecoration": false,
+            "textTransform": false,
+            "writingMode": false
+        }
     "styles": {},
     "templateParts": [
         {
