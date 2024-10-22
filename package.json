@@ -14,7 +14,7 @@
         "wp-env": "wp-env"
     },
     "devDependencies": {
-        "@wordpress/env": "^9.8.0",
+        "@wordpress/env": "^10.10.0",
         "@wordpress/scripts": "^30.1.0",
         "path": "^0.12.7",
         "webpack-remove-empty-scripts": "^1.0.4"
