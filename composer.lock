@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0a3c663ce643448084a09a6402fa483f",
+    "content-hash": "9c875ae23ca9eca64d30fa6e705316d8",
     "packages": [
         {
             "name": "captainhook/hook-installer",
@@ -306,16 +306,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v7.1.5",
+            "version": "v7.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "0fa539d12b3ccf068a722bbbffa07ca7079af9ee"
+                "reference": "bb5192af6edc797cbab5c8e8ecfea2fe5f421e57"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/0fa539d12b3ccf068a722bbbffa07ca7079af9ee",
-                "reference": "0fa539d12b3ccf068a722bbbffa07ca7079af9ee",
+                "url": "https://api.github.com/repos/symfony/console/zipball/bb5192af6edc797cbab5c8e8ecfea2fe5f421e57",
+                "reference": "bb5192af6edc797cbab5c8e8ecfea2fe5f421e57",
                 "shasum": ""
             },
             "require": {
@@ -379,7 +379,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v7.1.5"
+                "source": "https://github.com/symfony/console/tree/v7.1.6"
             },
             "funding": [
                 {
@@ -395,7 +395,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-20T08:28:38+00:00"
+            "time": "2024-10-09T08:46:59+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -784,16 +784,16 @@
         },
         {
             "name": "symfony/process",
-            "version": "v7.1.5",
+            "version": "v7.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",
-                "reference": "5c03ee6369281177f07f7c68252a280beccba847"
+                "reference": "6aaa189ddb4ff6b5de8fa3210f2fb42c87b4d12e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/process/zipball/5c03ee6369281177f07f7c68252a280beccba847",
-                "reference": "5c03ee6369281177f07f7c68252a280beccba847",
+                "url": "https://api.github.com/repos/symfony/process/zipball/6aaa189ddb4ff6b5de8fa3210f2fb42c87b4d12e",
+                "reference": "6aaa189ddb4ff6b5de8fa3210f2fb42c87b4d12e",
                 "shasum": ""
             },
             "require": {
@@ -825,7 +825,7 @@
             "description": "Executes commands in sub-processes",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/process/tree/v7.1.5"
+                "source": "https://github.com/symfony/process/tree/v7.1.6"
             },
             "funding": [
                 {
@@ -841,7 +841,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-19T21:48:23+00:00"
+            "time": "2024-09-25T14:20:29+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -928,16 +928,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v7.1.5",
+            "version": "v7.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "d66f9c343fa894ec2037cc928381df90a7ad4306"
+                "reference": "61b72d66bf96c360a727ae6232df5ac83c71f626"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/d66f9c343fa894ec2037cc928381df90a7ad4306",
-                "reference": "d66f9c343fa894ec2037cc928381df90a7ad4306",
+                "url": "https://api.github.com/repos/symfony/string/zipball/61b72d66bf96c360a727ae6232df5ac83c71f626",
+                "reference": "61b72d66bf96c360a727ae6232df5ac83c71f626",
                 "shasum": ""
             },
             "require": {
@@ -995,7 +995,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v7.1.5"
+                "source": "https://github.com/symfony/string/tree/v7.1.6"
             },
             "funding": [
                 {
@@ -1011,7 +1011,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-20T08:28:38+00:00"
+            "time": "2024-09-25T14:20:29+00:00"
         },
         {
             "name": "symfony/yaml",
@@ -1154,16 +1154,16 @@
     "packages-dev": [
         {
             "name": "captainhook/captainhook",
-            "version": "5.23.5",
+            "version": "5.23.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/captainhookphp/captainhook.git",
-                "reference": "8b39418081b0db0c8a2996f8740ea44345af6888"
+                "reference": "6c9a60f5771581f3788f98d7b4aa9a61156cfebb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/captainhookphp/captainhook/zipball/8b39418081b0db0c8a2996f8740ea44345af6888",
-                "reference": "8b39418081b0db0c8a2996f8740ea44345af6888",
+                "url": "https://api.github.com/repos/captainhookphp/captainhook/zipball/6c9a60f5771581f3788f98d7b4aa9a61156cfebb",
+                "reference": "6c9a60f5771581f3788f98d7b4aa9a61156cfebb",
                 "shasum": ""
             },
             "require": {
@@ -1226,7 +1226,7 @@
             ],
             "support": {
                 "issues": "https://github.com/captainhookphp/captainhook/issues",
-                "source": "https://github.com/captainhookphp/captainhook/tree/5.23.5"
+                "source": "https://github.com/captainhookphp/captainhook/tree/5.23.6"
             },
             "funding": [
                 {
@@ -1234,7 +1234,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-09-05T15:44:55+00:00"
+            "time": "2024-10-30T14:15:58+00:00"
         },
         {
             "name": "captainhook/secrets",
@@ -1618,16 +1618,16 @@
         },
         {
             "name": "symfony/filesystem",
-            "version": "v7.1.5",
+            "version": "v7.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/filesystem.git",
-                "reference": "61fe0566189bf32e8cfee78335d8776f64a66f5a"
+                "reference": "c835867b3c62bb05c7fe3d637c871c7ae52024d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/filesystem/zipball/61fe0566189bf32e8cfee78335d8776f64a66f5a",
-                "reference": "61fe0566189bf32e8cfee78335d8776f64a66f5a",
+                "url": "https://api.github.com/repos/symfony/filesystem/zipball/c835867b3c62bb05c7fe3d637c871c7ae52024d4",
+                "reference": "c835867b3c62bb05c7fe3d637c871c7ae52024d4",
                 "shasum": ""
             },
             "require": {
@@ -1664,7 +1664,7 @@
             "description": "Provides basic utilities for the filesystem",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/filesystem/tree/v7.1.5"
+                "source": "https://github.com/symfony/filesystem/tree/v7.1.6"
             },
             "funding": [
                 {
@@ -1680,7 +1680,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-17T09:16:35+00:00"
+            "time": "2024-10-25T15:11:02+00:00"
         },
         {
             "name": "wpackagist-plugin/create-block-theme",
