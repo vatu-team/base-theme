@@ -27,7 +27,7 @@ My core principles are:
 
 The aim of the directory structure for this plugin is to keep everything well-organized.
 
-```
+```sh
 ├── .github
 ├── assets
 │   ├── css
