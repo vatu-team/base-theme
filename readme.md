@@ -15,6 +15,12 @@ My core principles are:
 - Vanilla CSS
 - Vanilla JS
 
+### How we like to build themes
+
+- Prefer styles over user customisation: Allow the Editor to choose a large hero style over asking them to customise the patterns font size, spacing, alignment
+- Prefer patterns over building with blocks: Provide a pattern of blocks over asking the Editor to add multiple blocks
+- `Theme.json` should be used as a config file. Not for writing CSS. We like to test our CSS for quality purposes.
+
 ## [Documentation](https://github.com/vatu-team/base-themes/blob/trunk/docs/readme.md)
 
 ### Directory Structure
