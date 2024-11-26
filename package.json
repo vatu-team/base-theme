@@ -9,13 +9,16 @@
         "node": "^20.9.0"
     },
     "scripts": {
-        "start": "wp-scripts start",
-        "build": "wp-scripts build",
+        "build": "run-p 'build:theme'",
+        "watch": "run-p 'watch:theme'",
+        "build:theme": "wp-scripts build --config ./webpack.config.js",
+        "watch:theme": "wp-scripts start --config ./webpack.config.js",
         "wp-env": "wp-env"
     },
     "devDependencies": {
         "@wordpress/env": "^10.12.0",
         "@wordpress/scripts": "^30.5.1",
+        "npm-run-all": "^4.1.5",
         "path": "^0.12.7",
         "webpack-remove-empty-scripts": "^1.0.4"
     }

@@ -5,8 +5,16 @@ const defaultConfig = require( '@wordpress/scripts/config/webpack.config' );
 const { getWebpackEntryPoints } = require( '@wordpress/scripts/utils/config' );
 
 // Plugins.
+const CopyPlugin = require(
+	'copy-webpack-plugin'
+);
+
 const RemoveEmptyScriptsPlugin = require(
 	'webpack-remove-empty-scripts'
+);
+
+const RtlCssPlugin = require(
+	'rtlcss-webpack-plugin'
 );
 
 // Utilities.
@@ -47,12 +55,26 @@ module.exports = (env) => {
 				path: path.resolve(__dirname, './assets/')
 			},
 			plugins: [
-				...defaultConfig.plugins,
+				...defaultConfig.plugins.filter(
+					(filter) => ! (filter instanceof RtlCssPlugin)
+				),
 				new RemoveEmptyScriptsPlugin(
 					{
 						stage: RemoveEmptyScriptsPlugin.STAGE_AFTER_PROCESS_PLUGINS
 					}
 				),
+				// new CopyPlugin({
+				// 	patterns: [
+				// 		{
+				// 			from: 'public/app/themes/cuilbay-foundation/resources/fonts',
+				// 			to: 'fonts'
+				// 		},
+				// 		{
+				// 			from: 'public/app/themes/cuilbay-foundation/resources/svg',
+				// 			to: 'svg'
+				// 		},
+				// 	],
+				// }),
 			],
 		}
 	]

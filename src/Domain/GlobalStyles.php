@@ -42,7 +42,7 @@ final class GlobalStyles extends Service implements Registrable
 	{
 		$global_stylesheet = include_once get_theme_file_path( file: 'assets/css/global.asset.php' );
 
-		\wp_enqueue_script(
+		\wp_enqueue_style(
 			handle: 'base-theme-global-styles',
 			src: \get_theme_file_uri( file: '/assets/css/global.css' ),
 			deps: $global_stylesheet['dependencies'],
