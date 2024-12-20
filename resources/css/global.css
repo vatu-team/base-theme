@@ -4,3 +4,65 @@
  * For all customisation to be used across the majority of pages.
  */
 
+/* Reset
+ * ========================================================================== */
+* {
+	box-sizing: border-box;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+	font-style: italic;
+	background-repeat: no-repeat;
+	background-size: cover;
+	shape-margin: 0.75rem;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+}
+
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Shame
+ * CSS Hacky code that is written to get the release out that needs to be
+ * improved at a later time.
+ * Please document your code.
+   ========================================================================== */
+
+/* Utility: Position
+ * ========================================================================== */
+.u-position-relative {
+	position: relative;
+}
+
+/* Utility: Alignment
+ * ========================================================================== */
+.u-align-center {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.u-align-left {
+	margin-right: auto !important;
+}
+
+.u-align-right {
+	margin-left: auto !important;
+}

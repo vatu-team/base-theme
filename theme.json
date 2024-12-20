@@ -44,6 +44,13 @@
             "customFontSize": false,
             "defaultFontSizes": false,
             "dropCap": false,
+            "fontFamilies": [
+                {
+                    "slug": "default",
+                    "name": "Default",
+                    "fontFamily": "-apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, helvetica, arial, sans-serif"
+                }
+            ],
             "fontStyle": false,
             "fontWeight": false,
             "letterSpacing": false,
@@ -52,11 +59,84 @@
             "textDecoration": false,
             "textTransform": false,
             "writingMode": false
+        },
+        "custom": {
+            "font-size": {
+                "body": {
+                    "small": "clamp(0.8889rem, 0.7981rem + 0.4541vw, 1.15rem)",
+                    "medium": "clamp(1rem, 0.8478rem + 0.7609vw, 1.4375rem)",
+                    "large": "clamp(1.125rem, 0.8913rem + 1.1685vw, 1.7969rem)",
+                    "xlarge": "clamp(1.2656rem, 0.9246rem + 1.7052vw, 2.2461rem)"
+                },
+                "heading": {
+                    "xsmall": "clamp(1rem, 0.8478rem + 0.7609vw, 1.4375rem)",
+                    "small": "clamp(1.125rem, 0.8913rem + 1.1685vw, 1.7969rem)",
+                    "medium": "clamp(1.2656rem, 0.9246rem + 1.7052vw, 2.2461rem)",
+                    "large": "clamp(1.4238rem, 0.9425rem + 2.4066vw, 2.8076rem)",
+                    "xlarge": "clamp(1.6018rem, 0.9383rem + 3.3178vw, 3.5095rem)",
+                    "xxlarge": "clamp(1.802rem, 0.9029rem + 4.4954vw, 4.3869rem)"
+                }
+            },
+            "font-weight": {
+                "thin": "100",
+                "light-extra": "200",
+                "light": "300",
+                "normal": "400",
+                "medium": "500",
+                "bold-semi": "600",
+                "bold": "700",
+                "bold-extra": "800",
+                "black": "900"
+            }
         }
     },
     "styles": {
+        "elements": {
+            "heading": {
+              "typography": {
+                "lineHeight": "1.1"
+              }
+            },
+            "h1": {
+              "typography": {
+                "fontSize": "var( --wp--custom--font-size--heading--xlarge )"
+              }
+            },
+            "h2": {
+              "typography": {
+                "fontSize": "var( --wp--custom--font-size--heading--large )"
+              }
+            },
+            "h3": {
+              "typography": {
+                "fontSize": "var( --wp--custom--font-size--heading--medium )"
+              }
+            },
+            "h4": {
+              "typography": {
+                "fontSize": "var( --wp--custom--font-size--heading--small )"
+              }
+            },
+            "h5": {
+              "typography": {
+                "fontSize": "var( --wp--custom--font-size--heading--xsmall )"
+              }
+            },
+            "h6": {
+              "typography": {
+                "fontSize": "var( --wp--custom--font-size--heading--xsmall )"
+              }
+            },
+            "link": {
+              "color": {
+                "text": "inherit"
+              }
+            }
+          },
         "typography": {
-            "fontSize": "125%",
+            "fontFamily" : "var( --wp--preset--font-family--default )",
+            "fontSize": "var( --wp--custom--font-size--body--medium )",
+            "fontWeight" : "var( --wp--custom--font-weight--normal )",
             "lineHeight": "1.5",
             "letterSpacing": "0"
         }
