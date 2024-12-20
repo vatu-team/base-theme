@@ -58,7 +58,8 @@ module.exports = (env) => {
 					import: path.resolve(
 						process.cwd(),
 						'resources/js/',
-						'global.js' ),
+						'global.js'
+					),
 					filename: 'js/[name].js',
 				},
 				'css/global': {
