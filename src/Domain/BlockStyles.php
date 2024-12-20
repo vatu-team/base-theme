@@ -24,7 +24,9 @@ final class BlockStyles extends Service implements Registrable
 	/**
 	 * @var array<string>
 	 */
-	private array $block_list = [];
+	private array $block_list = [
+		'core/image',
+	];
 
 	public function register(): void
 	{
@@ -71,5 +73,4 @@ final class BlockStyles extends Service implements Registrable
 			$this->block_list
 		);
 	}
-
 }
