@@ -83,19 +83,21 @@ module.exports = (env) => {
 						stage: RemoveEmptyScriptsPlugin.STAGE_AFTER_PROCESS_PLUGINS
 					}
 				),
-				// new CopyPlugin({
-				// 	patterns: [
-				// 		{
-				// 			from: 'public/app/themes/cuilbay-foundation/resources/fonts',
-				// 			to: 'fonts'
-				// 		},
-				// 		{
-				// 			from: 'public/app/themes/cuilbay-foundation/resources/svg',
-				// 			to: 'svg'
-				// 		},
-				// 	],
-				// }),
-			],
+				new CopyPlugin({
+					patterns: [
+						{
+							from: './resources/fonts',
+							to: './assets/fonts',
+							noErrorOnMissing: true
+						},
+						{
+							from: './resources/svg',
+							to: './assets/svg',
+							noErrorOnMissing: true
+						},
+					],
+				}),
+			]
 		}
 	]
 };
