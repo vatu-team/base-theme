@@ -115,7 +115,18 @@
                 "typography": {
                     "fontFamilies": []
                 }
-            }
+            },
+            "core/image": {},
+            "core/gallery": {},
+            "core/audio": {},
+            "core/cover": {},
+            "core/file": {},
+            "core/media-text": {
+                "typography": {
+                    "fontFamilies": []
+                }
+            },
+            "core/video": {}
         },
         "border": {
             "color": false,
@@ -135,6 +146,8 @@
             "defaultPalette": false
         },
         "layout": {
+            "allowCustomContentAndWideSize": false,
+            "allowEditing": true,
             "contentSize": "clamp(288px, 80vw, 750px)",
             "wideSize": "clamp(288px, 90vw, 1200px)"
         },
@@ -171,6 +184,44 @@
             "writingMode": false
         },
         "custom": {
+            "animation": {
+                "instant": {
+                    "duration": "50ms",
+                    "timing": "linear"
+                },
+                "fast": {
+                    "duration": "200ms",
+                    "timing": "linear"
+                },
+                "slower": {
+                    "duration": "400ms",
+                    "timing": "linear"
+                },
+                "slow": {
+                    "duration": "750ms",
+                    "timing": "linear"
+                }
+            },
+            "color": {
+                "base": {},
+                "brand": {},
+                "utility": {},
+                "theme": {}
+            },
+            "border-radius": {
+                "01": "1pt",
+                "02": "3pt"
+            },
+            "border-width": {
+                "thin": "1pt",
+                "thick": "3pt"
+            },
+            "elevation": {
+                "sunken": "inset 0 1px 1px 0 #091e4240",
+                "default": "0 0 0 0 transparent",
+                "raised": "0 1px 1px 0 #091e4240,0 0 1px 0 #091E424F",
+                "overlay": "0 8px 12 0 #091E4226,0 0 1px 0 #091E424F"
+            },
             "font-size": {
                 "body": {
                     "small": "clamp(0.8889rem, 0.7981rem + 0.4541vw, 1.15rem)",
@@ -197,6 +248,31 @@
                 "bold": "700",
                 "bold-extra": "800",
                 "black": "900"
+            },
+            "spacing": {
+                "01": "clamp(0.125rem, 0.125rem + 0vw, 0.125rem)",
+                "02": "clamp(0.25rem, 0.2283rem + 0.1087vw, 0.3125rem)",
+                "03": "clamp(0.5rem, 0.4348rem + 0.3261vw, 0.6875rem)",
+                "04": "clamp(1rem, 0.8696rem + 0.6522vw, 1.375rem)",
+                "05": "clamp(1.125rem, 0.9946rem + 0.6522vw, 1.5rem)",
+                "06": "clamp(2rem, 1.7609rem + 1.1957vw, 2.6875rem)",
+                "07": "clamp(4rem, 3.5435rem + 2.2826vw, 5.3125rem)",
+                "08": "clamp(6.75rem, 5.9674rem + 3.913vw, 9rem)",
+                "09": "clamp(16rem, 14.1522rem + 9.2391vw, 21.3125rem)",
+                "10": "clamp(32.25rem, 28.5109rem + 18.6957vw, 43rem)"
+            },
+            "z-index": {
+                "0": "0",
+                "1": "10",
+                "2": "20",
+                "3": "30",
+                "4": "40",
+                "5": "50",
+                "6": "60",
+                "7": "70",
+                "8": "80",
+                "9": "90",
+                "10": "100"
             }
         }
     },
