@@ -19,6 +19,24 @@ const RtlCssPlugin = require(
 
 // Utilities.
 const path = require( 'path' );
+const { globSync } = require( 'glob' );
+
+// Block Custom Stylesheets.
+const blockStylesheets = () => {
+	return globSync(`./resources/css/blocks/*.css`).reduce(
+		(files, filepath) => {
+			const name = path.parse(filepath).name;
+
+			files[`css/blocks/${name}`] = path.resolve(
+				process.cwd(),
+				`resources/css/blocks`,
+				`${name}.css`
+			);
+
+			return files;
+		}, {}
+	)
+};
 
 module.exports = (env) => {
 	return [
@@ -27,6 +45,7 @@ module.exports = (env) => {
 			name: "Theme",
 			entry: {
 				...getWebpackEntryPoints,
+				...blockStylesheets(),
 				editor: {
 					import: path.resolve(
 						process.cwd(),
