@@ -25,7 +25,7 @@ final class BlockEditor extends Service implements Registrable
 	{
 		\add_filter(
 			hook_name: 'allowed_block_types_all',
-			callback: [$this,'example_allowed_block_types_when_editing_posts'],
+			callback: [ $this, 'postAllowedBlockList' ],
 			priority: 10,
 			accepted_args: 2
 		);
@@ -35,7 +35,7 @@ final class BlockEditor extends Service implements Registrable
 	 * @param array<string>|bool $allowed_block_types
 	 * @return array<string>|bool
 	 */
-	function example_allowed_block_types_when_editing_posts(
+	public function postAllowedBlockList(
 		bool|array $allowed_block_types,
 		\WP_Block_Editor_Context $block_editor_context
 	): array|bool {
@@ -77,8 +77,8 @@ final class BlockEditor extends Service implements Registrable
 
 	private function isRestrictedType( \WP_Block_Editor_Context $context ): bool
 	{
-		return 'core/edit-post' === $context->name &&
+		return $context->name === 'core/edit-post' &&
 			isset( $context->post ) &&
-			'post' === $context->post->post_type;
+			$context->post->post_type === 'post';
 	}
 }
