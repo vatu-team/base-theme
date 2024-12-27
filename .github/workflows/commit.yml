@@ -20,7 +20,7 @@ jobs:
 
   license:
     name: 'Check licenses are compatible.'
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
 
     strategy:
       fail-fast: true
@@ -76,7 +76,7 @@ jobs:
 
   security:
     name: 'PHP Security Analysis'
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
 
     strategy:
       fail-fast: true
@@ -132,7 +132,7 @@ jobs:
 
   validate:
     name: 'Validate'
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
 
     strategy:
       fail-fast: true
@@ -171,7 +171,7 @@ jobs:
      - 'license'
      - 'security'
      - 'validate'
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
 
     strategy:
       fail-fast: true
@@ -230,7 +230,7 @@ jobs:
      - 'license'
      - 'security'
      - 'validate'
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
 
     strategy:
       fail-fast: true
@@ -289,7 +289,7 @@ jobs:
      - 'security'
      - 'validate'
     continue-on-error: ${{ matrix.experimental }}
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
 
     strategy:
       fail-fast: false
@@ -347,7 +347,7 @@ jobs:
   #   name: 'Code Coverage'
   #   needs:
   #    - 'unit-tests'
-  #   runs-on: 'ubuntu-latest'
+  #   runs-on: 'ubuntu-24.04'
 
   #   strategy:
   #     fail-fast: true
@@ -411,7 +411,7 @@ jobs:
       - 'static-analysis'
       - 'compatibility'
     continue-on-error: ${{ matrix.experimental }}
-    runs-on: 'ubuntu-latest'
+    runs-on: 'ubuntu-24.04'
 
     strategy:
       fail-fast: false
