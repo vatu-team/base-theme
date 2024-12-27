@@ -21,6 +21,9 @@
             },
             {
                 "action": "composer run test:analysis"
+            },
+            {
+                "action": "composer test:compatibility"
             }
         ]
     },

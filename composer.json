@@ -91,6 +91,7 @@
             "@composer test:license",
             "@composer test:lint",
             "@composer test:security",
+            "@composer test:compatibility",
             "@composer test:unit",
             "@composer test:analysis"
         ],
@@ -115,6 +116,9 @@
         ],
         "test:analysis": [
             "./tools/vendor/bin/phpstan analyse -c ./phpstan.dist.neon --memory-limit 4G"
+        ],
+        "test:compatibility": [
+            "./tools/vendor/bin/phpcs --colors --report-width=120 --standard=PHPCompatibility --extensions=php --ignore=vendor/* --ignore=tools/* --runtime-set testVersion 8.3 ./"
         ],
         "tools": [
             "@composer install --working-dir=tools",

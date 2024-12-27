@@ -282,6 +282,67 @@ jobs:
         run: |
           composer run test:analysis
 
+  compatibility:
+    name: 'Compatiblity Tests'
+    needs:
+     - 'license'
+     - 'security'
+     - 'validate'
+    continue-on-error: ${{ matrix.experimental }}
+    runs-on: 'ubuntu-latest'
+
+    strategy:
+      fail-fast: false
+      matrix:
+        php-version:
+          - '8.3'
+        experimental: [false]
+        # include:
+        #   - php-version: '8.4'
+        #     experimental: true
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v4.2.2'
+
+      - name: 'Set up PHP environment.'
+        uses: 'shivammathur/setup-php@2.31.1'
+        with:
+          coverage: 'none'
+          ini-values: "memory_limit=-1"
+          tools: 'composer'
+          ini-file: none
+          php-version: "${{ matrix.php-version }}"
+        env:
+          COMPOSER_TOKEN: ${{ secrets.github-token }}
+
+      - name: 'Logs debug information.'
+        run: |
+          php --version
+          composer --version
+
+      - name: 'Get Composer Cache Directory.'
+        id: 'composer-cache'
+        run: |
+          echo "dir=$(composer config cache-files-dir)" >> $GITHUB_OUTPUT
+
+      - name: "Sets up Caching."
+        uses: "actions/cache@v4.2.0"
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-php-composer-tools-${{ hashFiles('tools/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-php-composer-tools-
+
+      - name: "Install dependencies."
+        run: |
+          composer install --no-interaction --prefer-dist
+
+      - name: 'Run Compatibility tests.'
+        run: |
+          composer run test:compatibility -- --runtime-set testVersion ${{ matrix.php-version }}
+
   # code-coverage:
   #   name: 'Code Coverage'
   #   needs:
@@ -348,6 +409,7 @@ jobs:
     needs:
       - 'coding-standard'
       - 'static-analysis'
+      - 'compatibility'
     continue-on-error: ${{ matrix.experimental }}
     runs-on: 'ubuntu-latest'
 
