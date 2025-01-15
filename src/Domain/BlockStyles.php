@@ -55,7 +55,7 @@ final class BlockStyles extends Service implements Registrable
 				args: [
 					'handle' => "base-theme-block-{$slug}",
 					'src'    => \get_theme_file_uri( "assets/css/blocks/{$slug}.css" ),
-					'deps'   => [ 'global-styles' ],
+					'deps'   => [],
 					'ver'    => null,
 					'path'   => \get_theme_file_path( "assets/css/blocks/{$slug}.css" ),
 				]
