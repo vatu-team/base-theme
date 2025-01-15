@@ -163,7 +163,41 @@
                       }
                     ]
                 }
+            },
+            "core/post-terms": {
+                "typography": {
+                    "fontFamilies": []
+                }
+            },
+            "core/buttons": {
+            "typography": {
+                "fontFamilies": []
             }
+            },
+            "core/button": {
+                "typography": {
+                    "fontFamilies": []
+                }
+            },
+            "core/columns": {},
+            "core/group": {},
+            "core/more": {},
+            "core/nextpage": {},
+            "core/separator": {},
+            "core/spacer": {},
+            "core/archives": {},
+            "core/calendar": {},
+            "core/categories": {},
+            "core/latest-comments": {},
+            "core/latest-posts": {},
+            "core/page-list": {},
+            "core/page-list-item": {},
+            "core/rss": {},
+            "core/search": {},
+            "core/shortcode": {},
+            "core/social-links": {},
+            "core/social-link": {},
+            "core/tag-cloud": {}
         },
         "border": {
             "color": false,
