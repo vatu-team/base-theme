@@ -54,7 +54,7 @@ final class GlobalStyles extends Service implements Registrable
 	{
 		\add_editor_style(
 			stylesheet: [
-				\get_theme_file_uri( file: '/assets/css/global.css' ),
+				'/assets/css/global.css',
 			]
 		);
 	}
