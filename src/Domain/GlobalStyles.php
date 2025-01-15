@@ -7,7 +7,7 @@
  * @author    Vatu <hello@vatu.dev>
  * @link      https://vatu.dev/
  * @license   GNU General Public License v3.0 or later
- * @copyright 2024 Vatu Limited.
+ * @copyright 2024-2025 Vatu Limited.
  */
 
 declare(strict_types=1);
@@ -52,9 +52,9 @@ final class GlobalStyles extends Service implements Registrable
 
 	public function editor(): void
 	{
-		add_editor_style(
+		\add_editor_style(
 			stylesheet: [
-				'style.css',
+				\get_theme_file_uri( file: '/assets/css/global.css' ),
 			]
 		);
 	}
