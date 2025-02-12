@@ -1,6 +1,16 @@
 {
     "core": null,
     "phpVersion": "8.3",
+    "env": {
+        "development": {
+            "port": 8080,
+            "mysqlPort": 13306
+        },
+        "tests": {
+            "port": 8181,
+            "mysqlPort": 13307
+        }
+    },
     "plugins": [],
     "themes": [ "." ],
     "config": {
