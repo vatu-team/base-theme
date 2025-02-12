@@ -81,8 +81,6 @@
         }
     },
     "forwardPorts": [],
-    "postStartCommand": [
-        "chmod +x ./.devcontainer/post-start.sh && ./.devcontainer/post-start.sh"
-    ],
+    "postStartCommand": "chmod +x ./.devcontainer/post-start.sh && ./.devcontainer/post-start.sh",
     "remoteUser": "vscode"
 }
