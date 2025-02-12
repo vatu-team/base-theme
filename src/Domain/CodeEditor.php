@@ -32,7 +32,7 @@ final class CodeEditor extends Service implements Registrable
 	}
 
 	/**
-	 * Disable non Administrators from edith the Code behind a post/page/
+	 * Disable non Administrators from editing the Code behind a post/page/
 	 *
 	 * phpcs:ignore SlevomatCodingStandard.TypeHints.DisallowMixedTypeHint.DisallowedMixedTypeHint -- Supplied by WordPress.
 	 * @param array<string,mixed> $settings
