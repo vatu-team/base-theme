@@ -21,21 +21,25 @@ const RtlCssPlugin = require(
 const path = require( 'path' );
 const { globSync } = require( 'glob' );
 
+// Custom Settings.
+const ThemePath = path.resolve("./");
+
 // Block Custom Stylesheets.
 const blockStylesheets = () => {
-	return globSync(`./resources/css/blocks/*.css`).reduce(
+	return globSync(ThemePath + "/resources/css/blocks/*.css").reduce(
 		(files, filepath) => {
 			const name = path.parse(filepath).name;
 
 			files[`css/blocks/${name}`] = path.resolve(
-				process.cwd(),
+				ThemePath,
 				`resources/css/blocks`,
-				`${name}.css`
+				`${name}.css`,
 			);
 
 			return files;
-		}, {}
-	)
+		},
+		{},
+	);
 };
 
 module.exports = (env) => {
@@ -68,11 +72,18 @@ module.exports = (env) => {
 						'resources/css/',
 						'global.css'
 					),
+				},
+				'css/editor': {
+					import: path.resolve(
+						process.cwd(),
+						'resources/css/',
+						'editor.css'
+					),
 				}
 			},
 			output: {
 				...defaultConfig.output,
-				path: path.resolve(__dirname, './assets/')
+				path: ThemePath + "/assets/",
 			},
 			plugins: [
 				...defaultConfig.plugins.filter(
