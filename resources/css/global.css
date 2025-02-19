@@ -55,6 +55,12 @@ select {
 	padding-inline-start: var( --wp--custom--spacing--04 ) !important;
 }
 
+/* Pattern: Site Footer
+   ========================================================================== */
+.c-site-footer__info {
+	font-size: var( --wp--custom--font-size--body--small );
+}
+
 /* Shame
  * CSS Hacky code that is written to get the release out that needs to be
  * improved at a later time.
