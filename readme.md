@@ -107,3 +107,9 @@ Build a test instance of WordPress to test this theme.
 - `npm run wp-env start -- --xdebug` – Start the development environment with xDebug configured
 - `npm run wp-env stop` – Stop the development environment
 - `npm run wp-env distroy` – Distroy the development environment
+
+## Install in project
+
+```sh
+composer create-project vatu/base-theme public/app/themes/{project-name} -s dev --no-install
+```
