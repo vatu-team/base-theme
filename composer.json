@@ -127,21 +127,21 @@
     },
     "archive": {
         "exclude": [
-            ".devcontainer",
-            ".github",
-            "packages",
-            "tools",
-            ".editorconfig",
-            ".gitattributes",
-            ".gitignore",
-            ".wp-env.json",
-            "captainhook.json",
-            "composer.lock",
-            "package.json",
-            "package-lock.json",
-            "phpcs.xml.dist",
-            "phpstan.dist.neon",
-            "phpunit.dist.xml"
+            "/.devcontainer",
+            "/.github",
+            "/packages",
+            "/tools",
+            "/.editorconfig",
+            "/.gitattributes",
+            "/.gitignore",
+            "/.wp-env.json",
+            "/captainhook.json",
+            "/composer.lock",
+            "/package.json",
+            "/package-lock.json",
+            "/phpcs.xml.dist",
+            "/phpstan.dist.neon",
+            "/phpunit.dist.xml"
         ]
     }
 }
