@@ -75,6 +75,9 @@
         "wordpress-install-dir": "vendor/wordpress/wordpress"
     },
     "scripts": {
+        "post-create-project-cmd": [
+            "@php -r \"file_exists('test.php') || touch('test.php');\""
+        ],
         "post-install-cmd": [
             "@composer run tools"
         ],
