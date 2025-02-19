@@ -76,7 +76,17 @@
     },
     "scripts": {
         "post-create-project-cmd": [
-            "@php -r \"file_exists('test.php') || touch('test.php');\""
+            "@php -r \"unlink('.editorconfig');\"",
+            "@php -r \"unlink('.gitattributes');\"",
+            "@php -r \"unlink('.gitignore');\"",
+            "@php -r \"unlink('.wp-env.json');\"",
+            "@php -r \"unlink('captainhook.json');\"",
+            "@php -r \"unlink('composer.lock');\"",
+            "@php -r \"unlink('package.json');\"",
+            "@php -r \"unlink('package-lock.json');\"",
+            "@php -r \"unlink('phpcs.xml.dist');\"",
+            "@php -r \"unlink('phpstan.dist.neon');\"",
+            "@php -r \"unlink('phpunit.dist.xml');\""
         ],
         "post-install-cmd": [
             "@composer run tools"
