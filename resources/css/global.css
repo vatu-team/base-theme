@@ -40,6 +40,21 @@ select {
 	font: inherit;
 }
 
+/* Pattern: Header
+   ========================================================================== */
+.c-site-header {
+	/* Header Background Color. */
+}
+
+.c-site-header__navigation .wp-block-navigation-item__content {
+	padding-block: var( --wp--custom--spacing--03 ) !important;
+}
+
+.c-site-header__navigation .wp-block-navigation__submenu-container {
+	padding-block-start: 0 !important;
+	padding-inline-start: var( --wp--custom--spacing--04 ) !important;
+}
+
 /* Shame
  * CSS Hacky code that is written to get the release out that needs to be
  * improved at a later time.
