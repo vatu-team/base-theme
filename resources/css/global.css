@@ -40,6 +40,44 @@ select {
 	font: inherit;
 }
 
+/* Pattern: Post Meta
+   ========================================================================== */
+
+.single-post .wp-block-post-title {
+	margin-block: var( --wp--custom--spacing--06 );
+}
+
+.c-post-meta {
+	margin-block: var( --wp--custom--spacing--07 );
+}
+
+.c-post-meta > div {
+	column-gap: var( --wp--custom--spacing--04 );
+}
+
+.c-post-meta .wp-block-avatar {
+	border-radius: 100%;
+	overflow: hidden;
+}
+
+.c-post-meta .c-post-meta__details {
+	gap:0;
+}
+
+.c-post-meta .wp-block-post-author {
+	font-size: var( --wp--custom--font-size--body--small );
+	font-weight: var( --wp--custom--font-weight--bold );
+}
+
+.c-post-meta .wp-block-post-author__name a {
+	text-decoration: none;
+}
+
+.c-post-meta__info {
+	gap: 0.5em;
+	font-size: var( --wp--custom--font-size--body--small );
+}
+
 /* Pattern: Site Header
    ========================================================================== */
 .c-site-header {
