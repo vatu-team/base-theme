@@ -1,0 +1,40 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Script run when Composer creates the project.
+ *
+ */
+
+$files_to_delete = [
+	'.editorconfig',
+	'.gitattributes',
+	'.gitignore',
+	'.wp-env.json',
+	'captainhook.json',
+	'composer.lock',
+	'package.json',
+	'package-lock.json',
+	'phpcs.xml.dist',
+	'phpstan.dist.neon',
+	'phpunit.dist.xml'
+	// 'composer.json',
+	// 'bin/post-create-project-cmd',
+];
+
+function deleteFile( string $filename ): bool
+{
+	if( file_exists( $filename ) ) {
+		throw new Exception( "File note found" );
+	}
+
+	return unlink( filename: $filename );
+}
+
+foreach( $files_to_delete as $file ) {
+	if ( deleteFile( filename: "{$project_root}/{$file}") ) {
+		continue;
+	}
+}
+
+exit();
