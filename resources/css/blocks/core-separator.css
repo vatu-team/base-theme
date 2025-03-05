@@ -1,0 +1,10 @@
+/**
+ * Block: Core/Separator
+ * 1.Overwrites `:root :where(.is-layout-constrained) > *` block start.
+ */
+
+.wp-block-separator {
+	margin-block: var( --wp--custom--spacing--07 ) !important; /* [1] */
+	border-top-width: var( --wp--custom--theme--separator--weight );
+	color: var( --wp--custom--theme--separator--color );
+}

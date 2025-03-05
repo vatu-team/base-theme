@@ -26,6 +26,7 @@ final class BlockStyles extends Service implements Registrable
 	 */
 	private array $block_list = [
 		'core/image',
+		'core/separator',
 	];
 
 	public function register(): void

@@ -370,6 +370,10 @@
                     "font-weight": "var( --wp--custom--font-weight--bold )",
                     "line-height": "1.1",
                     "letter-spacing": "0"
+                },
+                "separator": {
+                    "color": "var( --wp--custom--color--base--neutral-25 )",
+                    "weight": "var( --wp--custom--border-width--thin )"
                 }
             }
         }
