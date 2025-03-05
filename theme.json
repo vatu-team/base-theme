@@ -274,7 +274,17 @@
                 }
             },
             "color": {
-                "base": {},
+                "base": {
+                    "white": "hsl(0, 0%, 100%)",
+                    "neutral-05": "#F1F0F2",
+                    "neutral-10": "#E4E3E5",
+                    "neutral-25": "#B1B0B2",
+                    "neutral-50": "#8B8B8C",
+                    "neutral-75": "#666565",
+                    "neutral-90": "#333333",
+                    "neutral-95": "#1E1E1F",
+                    "black": "hsl(0, 0%, 0%)"
+                },
                 "brand": {},
                 "utility": {},
                 "theme": {}
@@ -344,6 +354,17 @@
                 "8": "80",
                 "9": "90",
                 "10": "100"
+            },
+            "theme": {
+                "base": {
+                    "background": "var( --wp--custom--color--base--white )",
+                    "color": "var( --wp--custom--color--base--neutral-90 )",
+                    "font-family": "var( --wp--preset--font-family--default )",
+                    "font-size": "var( --wp--custom--font-size--body--medium )",
+                    "font-weight": "var( --wp--custom--font-weight--normal )",
+                    "line-height": "1.5",
+                    "letter-spacing": "0"
+                }
             }
         }
     },
