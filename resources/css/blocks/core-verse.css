@@ -1,0 +1,10 @@
+/**
+ * Block: Core/Verse
+ */
+
+.wp-block-verse {
+	font-family: inherit;
+	display: table;
+	width: auto;
+	margin: 0 auto;
+}

@@ -29,6 +29,7 @@ final class BlockStyles extends Service implements Registrable
 		'core/quote',
 		'core/separator',
 		'core/table',
+		'core/verse',
 	];
 
 	public function register(): void
