@@ -245,6 +245,7 @@
                     "fontFamily": "-apple-system, blinkmacsystemfont, \"Segoe UI\", roboto, helvetica, arial, sans-serif"
                 }
             ],
+            "fontSizes": [],
             "fontStyle": false,
             "fontWeight": false,
             "letterSpacing": false,
