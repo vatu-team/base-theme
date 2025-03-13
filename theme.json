@@ -374,6 +374,21 @@
                 "separator": {
                     "color": "var( --wp--custom--color--base--neutral-25 )",
                     "weight": "var( --wp--custom--border-width--thin )"
+                },
+                "quote": {
+                    "border-color": "var( --wp--custom--color--base--neutral-25 )",
+                    "border-weight": "var( --wp--custom--border-width--thin )",
+                    "cite-color": "var( --wp--custom--color--base--neutral-90 )",
+                    "color": "var( --wp--custom--color--base--neutral-90 )",
+                    "font-family": "inherit",
+                    "font-size": "0.9em",
+                    "font-weight": "var( --wp--custom--font-weight--normal )",
+                    "line-height": "inherit",
+                    "letter-spacing": "inherit"
+                },
+                "site-header": {
+                    "background": "",
+                    "text": ""
                 }
             }
         }

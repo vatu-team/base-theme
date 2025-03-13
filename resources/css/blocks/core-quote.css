@@ -1,0 +1,24 @@
+/**
+ * Block: Core/Quote
+ */
+
+.wp-block-quote {
+	margin-block: var( --wp--custom--spacing--06 ) !important;
+	padding-inline-start: var( --wp--custom--spacing--04 );
+	border-inline-start: var( --wp--custom--theme--quote--border-weight ) solid var( --wp--custom--theme--quote--border-color );
+	font-size: var( --wp--custom--theme--quote--font-size );
+	font-family: var( --wp--custom--theme--quote--font-family );
+	font-weight: var( --wp--custom--theme--quote--font-weight );
+	line-height: var( --wp--custom--theme--quote--line-height );
+	letter-spacing: var( --wp--custom--theme--quote--letter-spacing );
+	color: var( --wp--custom--theme--quote--color );
+}
+
+.wp-block-quote > :not( cite ) {
+	padding-inline-start: var( --wp--custom--spacing--04 );
+}
+
+.wp-block-quote > cite {
+	font-style: italic;
+	color: var( --wp--custom--theme--quote--cite-color );
+}
