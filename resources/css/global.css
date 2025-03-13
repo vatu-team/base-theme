@@ -171,6 +171,18 @@ select {
  * Please document your code.
    ========================================================================== */
 
+/* Utility: Uppercase
+ * ========================================================================== */
+.u-uppercase {
+	text-transform: uppercase;
+}
+
+/* Utility: Small Caps
+ * ========================================================================== */
+.u-smallcaps {
+	font-variant-caps: all-small-caps;
+	font-variant-numeric: oldstyle-nums;
+}
 /* Utility: Position
  * ========================================================================== */
 .u-position-relative {
