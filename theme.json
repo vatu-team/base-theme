@@ -387,6 +387,10 @@
                     "line-height": "inherit",
                     "letter-spacing": "inherit"
                 },
+                "table": {
+                    "border-color": "var( --wp--custom--color--base--neutral-25 )",
+                    "font-size": "0.9em"
+                },
                 "site-header": {
                     "background": "",
                     "text": ""

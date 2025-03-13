@@ -1,0 +1,37 @@
+/**
+ * Block: Core/Table
+ */
+
+.wp-block-table {
+
+}
+
+.wp-block-table table {
+	border-color: var( --wp--custom--theme--table--border-color );
+	font-size: var( --wp--custom--theme--table--font-size );
+}
+
+.wp-block-table thead {
+	border-color: inherit;
+	border-bottom-width: 0;
+}
+.wp-block-table tfoot {
+	border-color: inherit;
+	border-top-width: 0;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+	padding: var( --wp--custom--spacing--04 );
+	border-inline-start-width: 0;
+	border-inline-end-width: 0;
+	border-color: inherit;
+
+}
+
+.wp-block-table .wp-element-caption {
+	margin-block: var( --wp--custom--spacing--03 );
+	margin-inline: var( --wp--custom--spacing--04 );
+	font-size: var( --wp--custom--font-size--body--small );
+	font-style: italic;
+}
