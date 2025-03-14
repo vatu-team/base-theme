@@ -404,6 +404,19 @@
                     "font-size": "var( --wp--custom--font-size--body--small )",
                     "font-style": "italic"
                 },
+                "pullquote": {
+                    "body": {
+                        "color": "var( --wp--custom--color--base--neutral-95 )",
+                        "font-family": "inherit",
+                        "font-size": "var( --wp--custom--font-size--body--large )",
+                        "font-style": "normal",
+                        "font-weight": "var( --wp--custom--font-weight--bold )"
+                    },
+                    "cite": {
+                        "color": "var( --wp--custom--color--base--neutral-95 )",
+                        "font-size": "var( --wp--custom--font-size--body--small )"
+                    }
+                },
                 "site-header": {
                     "background": "",
                     "text": ""
