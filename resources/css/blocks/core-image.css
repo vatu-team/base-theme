@@ -2,6 +2,17 @@
  * Block: Core/Image
  */
 
-.wp-element-caption {
-	font-size: var( --wp--custom--font-size--body--small );
+:root :where(
+	.wp-block-image.is-style-rounded img,
+	.wp-block-image .is-style-rounded img
+) {
+	border-radius: var( --wp--custom--theme--image--border-radius );
+}
+
+.wp-block-image .wp-element-caption {
+	margin-block: var(--wp--custom--spacing--03);
+	margin-inline: var(--wp--custom--spacing--04);
+	font-family: var( --wp--custom--theme--caption--font-family );
+	font-size: var(--wp--custom--theme--caption--font-size);
+	font-style:var( --wp--custom--theme--caption--font-style );
 }

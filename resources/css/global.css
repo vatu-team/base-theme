@@ -1,5 +1,5 @@
 /**
- * Global Style Sheet
+ * Global Style ::-webkit-search-decoration
  *
  * For all customisation to be used across the majority of pages.
  */
@@ -8,6 +8,19 @@
  * ========================================================================== */
 * {
 	box-sizing: border-box;
+}
+
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+body {
+	text-decoration-skip-ink: auto;
+	font-optical-sizing: auto;
+	font-variant-ligatures: common-ligatures no-discretionary-ligatures no-historical-ligatures contextual;
+	font-kerning: normal;
 }
 
 img {
@@ -33,11 +46,43 @@ dd {
 	margin-block-end: 0;
 }
 
+strong,
+b,
+th {
+	font-weight: var( --wp--custom--font-weight--bold );
+}
+
 input,
 button,
 textarea,
 select {
 	font: inherit;
+}
+
+q::before {
+	content: open-quote;
+}
+
+q::after  {
+	content: close-quote;
+}
+
+/* Language Specific
+   ========================================================================== */
+
+/* “Generic English ‘style’” */
+:lang(en) > * {
+	quotes: '“' '”' '‘' '’' ;
+}
+
+/* ‘British “style”’ */
+:lang(en-GB) > * {
+	quotes: '‘' '’' '“' '”';
+}
+
+/* « French “style” » */
+:lang(fr) > * {
+	quotes: '«?0202F' '?0202F»' '“' '”';
 }
 
 /* Pattern: Post Meta
@@ -183,6 +228,7 @@ select {
 	font-variant-caps: all-small-caps;
 	font-variant-numeric: oldstyle-nums;
 }
+
 /* Utility: Position
  * ========================================================================== */
 .u-position-relative {

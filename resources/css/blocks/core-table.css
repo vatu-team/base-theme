@@ -30,8 +30,9 @@
 }
 
 .wp-block-table .wp-element-caption {
-	margin-block: var( --wp--custom--spacing--03 );
-	margin-inline: var( --wp--custom--spacing--04 );
-	font-size: var( --wp--custom--font-size--body--small );
-	font-style: italic;
+	margin-block: var(--wp--custom--spacing--03);
+	margin-inline: var(--wp--custom--spacing--04);
+	font-family: var( --wp--custom--theme--caption--font-family );
+	font-size: var(--wp--custom--theme--caption--font-size);
+	font-style:var( --wp--custom--theme--caption--font-style );
 }

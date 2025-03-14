@@ -90,7 +90,9 @@
             "core/pullquote": {
                 "border": {
                     "color": false,
-                    "radius": false
+                    "radius": false,
+                    "style": false,
+                    "width": false
                 },
                 "typography": {
                     "fontFamilies": []
@@ -290,8 +292,11 @@
                 "utility": {}
             },
             "border-radius": {
-                "01": "1pt",
-                "02": "3pt"
+                "01": "clamp(0.1975rem, 0.1675rem + 0.1503vw, 0.284rem)",
+                "02": "clamp(0.2963rem, 0.2512rem + 0.2254vw, 0.4259rem)",
+                "03": "clamp(0.4444rem, 0.3768rem + 0.3382vw, 0.6389rem)",
+                "04": "clamp(0.6667rem, 0.5652rem + 0.5072vw, 0.9583rem)",
+                "05": "clamp(1rem, 0.8478rem + 0.7609vw, 1.4375rem)"
             },
             "border-width": {
                 "thin": "1pt",
@@ -390,6 +395,14 @@
                 "table": {
                     "border-color": "var( --wp--custom--color--base--neutral-25 )",
                     "font-size": "0.9em"
+                },
+                "image": {
+                    "border-radius": "var( --wp--custom--border-radius--05 )"
+                },
+                "caption": {
+                    "font-family": "inherit",
+                    "font-size": "var( --wp--custom--font-size--body--small )",
+                    "font-style": "italic"
                 },
                 "site-header": {
                     "background": "",
