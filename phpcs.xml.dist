@@ -56,8 +56,8 @@
 
 		<properties>
 			<property name="text_domain" type="array">
-				<element value="erico-pall" />
-				<element value="eg-site-functionality" />
+				<element value="" />
+				<element value="base-theme" />
 			</property>
 		</properties>
 
