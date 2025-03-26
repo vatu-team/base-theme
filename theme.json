@@ -501,6 +501,9 @@
                         "font-size": "var( --wp--custom--font-size--body--small )"
                     }
                 },
+                "gallery": {
+                    "gap": "var( --wp--custom--spacing--04 )"
+                },
                 "site-header": {
                     "background": "",
                     "text": ""
