@@ -4,7 +4,7 @@
 
 /* WordPress dependencies.
    ========================================================================== */
-import { unregisterBlockStyle } from '@wordpress/blocks';
+import { unregisterBlockStyle, registerBlockStyle } from '@wordpress/blocks';
 import {} from '@wordpress/dom-ready';
 import {} from '@wordpress/edit-post';
 
@@ -39,7 +39,23 @@ wp.domReady( function() {
 	// Remove default styling.
 	unregisterBlockStyle(
 		'core/button',
-		[ 'default', 'fill', 'outline' ]
+		[ 'fill', 'outline' ]
+	);
+
+	registerBlockStyle(
+		'core/button',
+		{
+			name: "primary",
+			label: "Primary",
+		}
+	);
+
+	registerBlockStyle(
+		'core/button',
+		{
+			name: "secondary",
+			label: "Secondary",
+		}
 	);
 
 } );

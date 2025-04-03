@@ -85,6 +85,24 @@ q::after  {
 	quotes: '«?0202F' '?0202F»' '“' '”';
 }
 
+
+/* Core: Button
+   ========================================================================== */
+
+.wp-element-button {
+	padding-block: 0;
+	padding-inline: 0;
+	text-decoration: none;
+	background-color: transparent;
+	color: var(--wp--custom--theme--link--active-color );
+	transition: all var( --wp--custom--animation--instant--duration ) var( --wp--custom--animation--instant--timing );
+}
+
+.wp-element-button:hover,
+.wp-element-button:focus {
+	text-decoration: underline;
+}
+
 /* Pattern: Post Meta
    ========================================================================== */
 

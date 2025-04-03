@@ -25,6 +25,7 @@ final class BlockStyles extends Service implements Registrable
 	 * @var array<string>
 	 */
 	private array $block_list = [
+		'core/button',
 		'core/gallery',
 		'core/image',
 		'core/pullquote',

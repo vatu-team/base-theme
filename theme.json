@@ -179,6 +179,14 @@
             "core/button": {
                 "typography": {
                     "fontFamilies": []
+                },
+                "border": {
+                    "radius": false
+                }
+            },
+            "core/read-more": {
+                "typography": {
+                    "fontFamilies": []
                 }
             },
             "core/columns": {},
@@ -453,6 +461,9 @@
                     "font-weight": "var( --wp--custom--font-weight--normal )",
                     "line-height": "1.5",
                     "letter-spacing": "0"
+                },
+                "link": {
+                    "active-color": "#0000EE"
                 },
                 "heading": {
                     "color": "var( --wp--custom--color--base--neutral-95 )",
