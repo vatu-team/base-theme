@@ -3,10 +3,12 @@
 
 /**
  * Script run when Composer creates the project.
- *
  */
 
+$project_root = dirname( path: __FILE__, levels: 2 );
+
 $files_to_delete = [
+	'.allowed-licenses',
 	'.editorconfig',
 	'.gitattributes',
 	'.gitignore',
@@ -17,24 +19,71 @@ $files_to_delete = [
 	'package-lock.json',
 	'phpcs.xml.dist',
 	'phpstan.dist.neon',
-	'phpunit.dist.xml'
-	// 'composer.json',
-	// 'bin/post-create-project-cmd',
+	'phpunit.dist.xml',
+	'composer.json',
+];
+
+$directories_to_delete = [
+	'.devcontainer',
+	'.github',
+	'bin',
+	'packages',
+	'tools',
 ];
 
 function deleteFile( string $filename ): bool
 {
-	if( file_exists( $filename ) ) {
-		throw new Exception( "File note found" );
+	if( ! file_exists( filename: $filename ) ) {
+		throw new Exception( "Not Found: {$filename}" );
 	}
-
+	echo "Deleted `{$filename}`." . "\r\n";
 	return unlink( filename: $filename );
 }
 
-foreach( $files_to_delete as $file ) {
-	if ( deleteFile( filename: "{$project_root}/{$file}") ) {
-		continue;
+function deleteDirectory( string $directory ): bool
+{
+	if ( ! is_dir( filename: $directory ) ) {
+		throw new Exception( "Not Found: {$directory}" );
 	}
+
+	$it = new RecursiveDirectoryIterator(
+		$directory,
+		RecursiveDirectoryIterator::SKIP_DOTS
+	);
+
+	$files = new RecursiveIteratorIterator(
+		$it,
+		RecursiveIteratorIterator::CHILD_FIRST
+	);
+
+	foreach( $files as $file ) {
+
+		if ( $file->isFile() ) {
+			unlink( filename: $file->getPathname() );
+			continue;
+		}
+
+		if ( $file->isDir() ) {
+			rmdir( directory: $file->getPathname() );
+			continue;
+		}
+
+	}
+
+	return rmdir( directory: $directory );
+}
+
+try {
+	foreach( $files_to_delete as $file ) {
+		deleteFile( filename: "{$project_root}/{$file}" );
+	}
+
+	foreach( $directories_to_delete as $directory ) {
+		deleteDirectory( directory: "{$project_root}/{$directory}" );
+	}
+
+} catch ( \Exception $exception ) {
+	echo $exception->getMessage() . "\r\n";
 }
 
 exit();
