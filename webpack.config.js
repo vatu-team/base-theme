@@ -17,6 +17,8 @@ const RtlCssPlugin = require(
 	'rtlcss-webpack-plugin'
 );
 
+const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
+
 // Utilities.
 const path = require( 'path' );
 const { globSync } = require( 'glob' );
@@ -47,6 +49,11 @@ module.exports = (env) => {
 		{
 			...defaultConfig,
 			name: "Theme",
+			module: {
+				rules: [
+					...defaultConfig.module.rules,
+				],
+			},
 			entry: {
 				...getWebpackEntryPoints,
 				...blockStylesheets(),
@@ -79,7 +86,7 @@ module.exports = (env) => {
 						'resources/css/',
 						'editor.css'
 					),
-				}
+				},
 			},
 			output: {
 				...defaultConfig.output,
@@ -97,18 +104,36 @@ module.exports = (env) => {
 				new CopyPlugin({
 					patterns: [
 						{
-							from: './resources/fonts',
-							to: './assets/fonts',
-							noErrorOnMissing: true
+							from: 'resources/svg/*.svg',
+							to: "svg/[name][ext]",
+							noErrorOnMissing: true,
 						},
 						{
-							from: './resources/svg',
-							to: './assets/svg',
+							from: 'resources/fonts/',
+							to: "fonts/",
 							noErrorOnMissing: true
 						},
 					],
 				}),
-			]
+				new SVGSpritemapPlugin(
+					['resources/svg/icons/*.svg'],
+					{
+						input: {},
+						output: {
+							filename: '/svg/icons.svg',
+							svg: {},
+							svgo: true,
+						},
+						sprite: {
+							prefix: false,
+							gutter: false,
+							generate: {
+								title: false,
+							}
+						}
+					}
+				),
+			],
 		}
 	]
 };
