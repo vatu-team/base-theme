@@ -86,7 +86,7 @@ This requires a `register()` method be used when WordPress actions and fillters 
 
 ## Base Theme Template Development
 
-To start improving **this** template  for the first time:
+To start improving **this** template for the first time:
 
 ### Install
 
