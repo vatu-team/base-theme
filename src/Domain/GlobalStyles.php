@@ -31,6 +31,16 @@ final class GlobalStyles extends Service implements Registrable
 		);
 
 		\add_action(
+			hook_name: 'wp_enqueue_scripts',
+			callback: [
+				$this,
+				'dequeue',
+			],
+			priority: 100,
+			accepted_args: 0
+		);
+
+		\add_action(
 			hook_name: 'admin_init',
 			callback: [ $this, 'editor' ],
 			priority: 10,
@@ -48,6 +58,11 @@ final class GlobalStyles extends Service implements Registrable
 			deps: $global_stylesheet['dependencies'],
 			ver: $global_stylesheet['version']
 		);
+	}
+
+	public function dequeue(): void
+	{
+		// \wp_dequeue_style( handle: 'global-styles' );
 	}
 
 	public function editor(): void
