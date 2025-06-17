@@ -35,7 +35,7 @@
         "captainhook/hook-installer": "^1.0.3",
         "johnpbloch/wordpress": "^6.8.1",
         "wpackagist-plugin/create-block-theme": "^2.7.0",
-        "wpackagist-plugin/query-monitor": "^3.17.2"
+        "wpackagist-plugin/query-monitor": "^3.18.0"
     },
     "config": {
         "optimize-autoloader": true,
