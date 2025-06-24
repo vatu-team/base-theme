@@ -85,6 +85,14 @@ q::after  {
 	quotes: '«?0202F' '?0202F»' '“' '”';
 }
 
+/* Core: Sticky
+   ========================================================================== */
+
+header:has(>.is-position-sticky) {
+	position: sticky;
+	top: calc( 0px + var( --wp-admin--admin-bar--height, 0px ) );
+	z-index: var( --wp--custom--z-index--5 );
+}
 
 /* Core: Button
    ========================================================================== */
