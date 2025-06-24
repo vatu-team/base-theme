@@ -58,34 +58,18 @@ module.exports = (env) => {
 				...getWebpackEntryPoints,
 				...blockStylesheets(),
 				editor: {
-					import: path.resolve(
-						process.cwd(),
-						'resources/js/',
-						'editor.js'
-					),
-					filename: 'js/[name].js',
+					import: path.resolve(ThemePath, "resources/js/", "editor.js"),
+					filename: "js/[name].js",
 				},
 				global: {
-					import: path.resolve(
-						process.cwd(),
-						'resources/js/',
-						'global.js'
-					),
-					filename: 'js/[name].js',
+					import: path.resolve(ThemePath, "resources/js/", "global.js"),
+					filename: "js/[name].js",
 				},
-				'css/global': {
-					import: path.resolve(
-						process.cwd(),
-						'resources/css/',
-						'global.css'
-					),
+				"css/global": {
+					import: path.resolve(ThemePath, "resources/css/", "global.css"),
 				},
-				'css/editor': {
-					import: path.resolve(
-						process.cwd(),
-						'resources/css/',
-						'editor.css'
-					),
+				"css/editor": {
+					import: path.resolve(ThemePath, "resources/css/", "editor.css"),
 				},
 			},
 			output: {
@@ -104,19 +88,24 @@ module.exports = (env) => {
 				new CopyPlugin({
 					patterns: [
 						{
-							from: 'resources/svg/*.svg',
+							from: ThemePath + "resources/svg/*.svg",
 							to: "svg/[name][ext]",
 							noErrorOnMissing: true,
 						},
 						{
-							from: 'resources/fonts/',
+							from: ThemePath + "resources/fonts/",
 							to: "fonts/",
 							noErrorOnMissing: true
+						},
+						{
+							from: ThemePath + "/resources/images",
+							to: ThemePath + "/assets/images",
+							noErrorOnMissing: true,
 						},
 					],
 				}),
 				new SVGSpritemapPlugin(
-					['resources/svg/icons/*.svg'],
+					[ ThemePath + '/resources/svg/icons/*.svg' ],
 					{
 						input: {},
 						output: {
