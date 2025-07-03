@@ -532,7 +532,7 @@
                     "text": "var( --wp--custom--theme--heading--color )"
                 },
                 "typography": {
-                    "lineHeight": "var( --wp--custom--theme--heading--color )",
+                    "lineHeight": "var( --wp--custom--theme--heading--line-height )",
                     "fontFamily": "var( --wp--custom--theme--heading--font-family )",
                     "fontWeight": "var( --wp--custom--theme--heading--font-weight )"
                 }
