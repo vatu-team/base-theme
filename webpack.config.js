@@ -93,9 +93,9 @@ module.exports = (env) => {
 							noErrorOnMissing: true,
 						},
 						{
-							from: ThemePath + "resources/fonts/",
-							to: "fonts/",
-							noErrorOnMissing: true
+							from: ThemePath + "/resources/fonts",
+							to: ThemePath + "/assets/fonts",
+							noErrorOnMissing: true,
 						},
 						{
 							from: ThemePath + "/resources/images",
