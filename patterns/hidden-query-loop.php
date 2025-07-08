@@ -18,7 +18,9 @@ declare(strict_types=1);
 
 ?>
 
-<?php if ( is_home() && ! is_front_page() && ! empty( get_the_title() ) ) : ?>
+<?php
+	if ( is_home() && ! is_front_page() && ! empty( get_the_title() ) ) :
+?>
 	<header class="page-header alignwide">
 		<!-- wp:post-title {"isLink":true,"fontSize":"x-large"} /-->
 	</header>

@@ -20,29 +20,29 @@ declare(strict_types=1);
 
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading" id="page-not-found">
-	<?php echo esc_html_x( text: 'Page not found', context: '404 error message', domain: 'base-theme' ); ?>
+	<?php echo esc_html_x( 'Page not found', '404 error message', 'base-theme' ); ?>
 </h1>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
-<p><?php echo esc_html_x( text: "We can't find the page you're looking for. The website administrators may have moved it, removed it, or restricted its visibility.", context: '404 error message', domain: 'base-theme' ); ?></p>
+<p><?php echo esc_html_x( "We can't find the page you're looking for. The website administrators may have moved it, removed it, or restricted its visibility.", '404 error message', 'base-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
 <p>
-<?php echo esc_html_x( text: "Visit our homepage for more links or contact us and we'll help resolve your issue.", context: '404 more message', domain: 'base-theme' ); ?></p>
+<?php echo esc_html_x( "Visit our homepage for more links or contact us and we'll help resolve your issue.", '404 more message', 'base-theme' ); ?></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:buttons -->
 <div class="wp-block-buttons">
 	<!-- wp:button -->
-	<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( url: home_url() ); ?>"><?php echo esc_html_x( text: "Visit homepage", context: '404 home link', domain: 'base-theme' ); ?></a>
+	<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( url: home_url() ); ?>"><?php echo esc_html_x( "Visit homepage", '404 home link', 'base-theme' ); ?></a>
 	</div>
 	<!-- /wp:button -->
 
 	<!-- wp:button {} -->
 	<div class="wp-block-button">
-		<a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( url: home_url( path: 'contact' ) ); ?>"><?php echo esc_html_x( text: "Contact us", context: '404 contact link', domain: 'base-theme' ); ?></a>
+		<a class="wp-block-button__link wp-element-button" href="<?php echo esc_url( url: home_url( path: 'contact' ) ); ?>"><?php echo esc_html_x( "Contact us", '404 contact link', 'base-theme' ); ?></a>
 	</div>
 	<!-- /wp:button -->
 </div>

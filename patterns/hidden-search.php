@@ -23,7 +23,7 @@ declare(strict_types=1);
 
 <!-- wp:group {"metadata":{"name":"Search Field"},"tagName":"header","align":"full","className":"c-search-field","layout":{"type":"constrained"}} -->
 <header class="wp-block-group alignfull c-search-field"><!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading" id="page-not-found"><?php echo esc_html_x( text: 'Search', context: 'search title', domain: 'base-theme' ); ?></h1>
+<h1 class="wp-block-heading" id="page-not-found"><?php echo esc_html_x( 'Search', 'search title', 'base-theme' ); ?></h1>
 <!-- /wp:heading -->
 
 <!-- wp:search {"label":"Search","showLabel":false,"placeholder":"Search","buttonText":"Search"} /--></header>
