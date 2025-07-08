@@ -36,7 +36,7 @@ if ( is_readable( $composer_autoloader ) ) {
 
 try {
 	( new ThemeFactory() )::create( hook_prefix: HOOK_PREFIX )->bootstrap();
-} catch ( Throwable $exception ) {
+} catch ( \Throwable $exception ) {
 	// phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_error_log, Squiz.PHP.DiscouragedFunctions.Discouraged
 	error_log( $exception->getMessage() );
 }
