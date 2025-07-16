@@ -29,6 +29,10 @@ function addAttributes( settings ) {
 			type: 'boolean',
 			default: true,
 		},
+		hideText: {
+			type: 'boolean',
+			default: false,
+		},
 	};
 
 	const newSettings = {
