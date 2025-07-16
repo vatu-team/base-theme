@@ -44,6 +44,24 @@ const blockStylesheets = () => {
 	);
 };
 
+// Block Custom Scripts.
+const blockScripts = () => {
+	return globSync(ThemePath + "/resources/js/blocks/*.js").reduce(
+		(files, filepath) => {
+			const name = path.parse(filepath).name;
+
+			files[`js/blocks/${name}`] = path.resolve(
+				ThemePath,
+				`resources/js/blocks`,
+				`${name}.js`,
+			);
+
+			return files;
+		},
+		{},
+	);
+};
+
 module.exports = (env) => {
 	return [
 		{
@@ -57,6 +75,7 @@ module.exports = (env) => {
 			entry: {
 				...getWebpackEntryPoints,
 				...blockStylesheets(),
+				...blockScripts(),
 				editor: {
 					import: path.resolve(ThemePath, "resources/js/", "editor.js"),
 					filename: "js/[name].js",
