@@ -12,6 +12,8 @@ import { Icon, Button, PanelBody, PanelRow, ToggleControl, __experimentalToggleG
 import { justifyLeft, justifyRight } from '@wordpress/icons';
 import { addFilter } from '@wordpress/hooks';
 import { SVG } from '@wordpress/primitives';
+import { useSelect } from '@wordpress/data';
+import { store as coreDataStore } from '@wordpress/core-data';
 
 export const ICON_SPRITE = [
 	{
@@ -91,6 +93,11 @@ function addInspectorControls( BlockEdit ) {
 			return <BlockEdit { ...props } />;
 		}
 
+		// Get theme url for sprite file.
+		const theme_uri = useSelect(
+			( select ) => select( coreDataStore ).getCurrentTheme()
+		);
+
 		// Retrieve selected attributes from the block.
 		const { icon: currentIcon, iconPosition, hideText } = attributes;
 
@@ -130,7 +137,7 @@ function addInspectorControls( BlockEdit ) {
 										}
 									>
 										<Icon icon={<SVG aria-hidden="false" viewBox="0 0 24 24">
-											<use href={`http://localhost:8080/wp-content/themes/base-theme/assets/svg/icons.svg#${icon.value}`}></use>
+											<use href={`${theme_uri.stylesheet_uri}/assets/svg/icons.svg#${icon.value}`}></use>
 										</SVG>} />
 
 									</Button>
