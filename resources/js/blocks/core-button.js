@@ -29,15 +29,18 @@ function addAttributes( settings ) {
 	const iconAttributes = {
 		icon: {
 			type: 'string',
+			role: 'content',
 		},
 		iconPosition: {
 			type: 'enum',
 			default: 'start',
 			enum: [ 'start', 'end' ],
+			role: 'content',
 		},
 		hideText: {
 			type: 'boolean',
 			default: false,
+			role: 'content',
 		},
 	};
 
