@@ -157,6 +157,7 @@ function addInspectorControls( BlockEdit ) {
 								onChange={ (value) => {
 									setAttributes( { iconPosition: value } );
 								} }
+								value={ iconPosition }
 							>
 								<ToggleGroupControlOptionIcon
 									value="start"
