@@ -117,7 +117,7 @@ function addInspectorControls( BlockEdit ) {
 						<PanelRow>
 							<Grid
 								className="button-icon-picker__grid"
-								columns="5"
+								columns="4"
 								gap="3"
 							>
 								{ ICON_SPRITE.map( ( icon, index ) => (
