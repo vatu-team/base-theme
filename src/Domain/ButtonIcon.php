@@ -75,7 +75,7 @@ final class ButtonIcon extends Service implements Registrable
 		$result = $processer->get_updated_html();
 
 		$icon_html = sprintf(
-			'<span class="c-icon"><svg aria-hidden="%2$s"><use xlink:href="%1$s"></use></svg></span>',
+			'<span class="c-icon"><svg aria-hidden="%2$s"><use href="%1$s"></use></svg></span>',
 			esc_url( get_stylesheet_directory_uri() . "/assets/svg/icons.svg#{$icon}" ),
 			'true'
 		);
