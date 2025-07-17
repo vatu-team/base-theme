@@ -115,6 +115,7 @@ function addInspectorControls( BlockEdit ) {
 							>
 								{ ICON_SPRITE.map( ( icon, index ) => (
 									<Button
+										__next40pxDefaultSize
 										key={ index }
 										label={ icon?.label }
 										isPressed={ currentIcon === icon.value }
@@ -138,20 +139,8 @@ function addInspectorControls( BlockEdit ) {
 						</PanelRow>
 
 						<PanelRow>
-							<ToggleControl
-								label={ __( 'Hide text', 'base-theme' ) }
-								checked={ hideText }
-								onChange={ () => {
-									setAttributes( {
-										hideText: ! hideText,
-									} );
-								} }
-							/>
-						</PanelRow>
-						<PanelRow>
 							<ToggleGroupControl
 								__next40pxDefaultSize
-								__nextHasNoMarginBottom
 								isBlock
 								label={ __( 'Icon position', 'base-theme' ) }
 								onChange={ (value) => {
@@ -171,6 +160,19 @@ function addInspectorControls( BlockEdit ) {
 								/>
 							</ToggleGroupControl>
 						</PanelRow>
+
+						<PanelRow>
+							<ToggleControl
+								label={ __( 'Hide text', 'base-theme' ) }
+								checked={ hideText }
+								onChange={ () => {
+									setAttributes( {
+										hideText: ! hideText,
+									} );
+								} }
+							/>
+						</PanelRow>
+
 					</PanelBody>
 				</InspectorControls>
 			</>
