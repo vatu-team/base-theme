@@ -55,7 +55,6 @@ final class ButtonIcon extends Service implements Registrable
 	 */
 	public function renderCoreButton( string $block_content, array $block ): string
 	{
-
 		if ( ! isset( $block['attrs']['icon'] ) ) {
 			return $block_content;
 		}
