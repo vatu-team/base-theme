@@ -189,8 +189,16 @@
                     "fontFamilies": []
                 }
             },
-            "core/columns": {},
-            "core/group": {},
+            "core/columns": {
+                "typography": {
+                    "fontFamilies": []
+                }
+            },
+            "core/group": {
+                "typography": {
+                    "fontFamilies": []
+                }
+            },
             "core/more": {},
             "core/nextpage": {},
             "core/separator": {},
