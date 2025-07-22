@@ -16,7 +16,8 @@
         "wp-env": "wp-env"
     },
     "devDependencies": {
-        "@wordpress/env": "^10.25.0",
+        "@wordpress/env": "^10.26.0",
+        "@wordpress/icons": "^10.26.0",
         "@wordpress/scripts": "^30.19.0",
         "copy-webpack-plugin": "^13.0.0",
         "glob": "^11.0.3",
@@ -25,5 +26,8 @@
         "rtlcss-webpack-plugin": "^4.0.7",
         "svg-spritemap-webpack-plugin": "^4.7.0",
         "webpack-remove-empty-scripts": "^1.1.1"
+    },
+    "dependencies": {
+        "classnames": "^2.5.1"
     }
 }
