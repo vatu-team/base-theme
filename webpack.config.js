@@ -88,7 +88,7 @@ module.exports = (env) => {
 				new CopyPlugin({
 					patterns: [
 						{
-							from: ThemePath + "resources/svg/*.svg",
+							from: ThemePath + "/resources/svg/",
 							to: "svg/[name][ext]",
 							noErrorOnMissing: true,
 						},
