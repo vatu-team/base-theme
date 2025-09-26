@@ -133,9 +133,7 @@ final class Animation extends Service implements Registrable
 			]
 		);
 
-		\wp_enqueue_script(
-			handle: 'animation-editor',
-		);
+		\wp_enqueue_script( handle: 'animation-editor' );
 	}
 
 	public function enqueueBlock(): void
@@ -189,11 +187,6 @@ final class Animation extends Service implements Registrable
 				'easing'       => 'ease-out',
 			],
 			'properties' => [
-				/**
-				 * Used to determine if the animation settings are from the block or global.
-				 *
-				 * @var string $source The source of the animation settings.
-				 */
 				'source' => [
 					'type' => 'string',
 				],
@@ -307,10 +300,12 @@ final class Animation extends Service implements Registrable
 
 			// Hide entrance animations initially
 			if ( $this->isEntranceAnimation( $animation_type ) ) {
-				$style_additions[] = "opacity: 0";
+				$style_additions[] = 'opacity: 0';
 			}
 
-			$new_style = $current_style ? $current_style . '; ' . \implode( '; ', $style_additions ) : \implode( '; ', $style_additions );
+			$new_style = $current_style
+				? $current_style . '; ' . \implode( '; ', $style_additions )
+				: \implode( '; ', $style_additions );
 			$processor->set_attribute( 'style', $new_style );
 
 			$modified_content = $processor->get_updated_html();
@@ -335,26 +330,32 @@ final class Animation extends Service implements Registrable
 	 * @param string $block_name The block type name.
 	 * @return array<string, mixed>|null Effective animation settings or null if no animation.
 	 */
-	private function getEffectiveAnimation( ?array $block_animation, string $block_name ): ?array
+	private function getEffectiveAnimation( null|array $block_animation, string $block_name ): null|array
 	{
 		// If block has explicit animation settings with source 'block', use them
-		if ( ! empty( $block_animation ) &&
-			 ! empty( $block_animation['type'] ) &&
-			 ( $block_animation['source'] ?? 'block' ) === 'block' ) {
+		if (
+			! empty( $block_animation ) &&
+			! empty( $block_animation['type'] ) &&
+			( $block_animation['source'] ?? 'block' ) === 'block'
+		) {
 			return $block_animation;
 		}
 
 		// If block has explicit empty animation (user chose "None"), respect that
-		if ( ! empty( $block_animation ) &&
-			 empty( $block_animation['type'] ) &&
-			 ( $block_animation['source'] ?? 'block' ) === 'block' ) {
-			return null; // Explicit "no animation"
+		if (
+			! empty( $block_animation ) &&
+			empty( $block_animation['type'] ) &&
+			( $block_animation['source'] ?? 'block' ) === 'block'
+		) {
+			// Explicit "no animation"
+			return null;
 		}
 
 		// Check if this block type has default animations
 		if ( isset( $this->default_block_animations[ $block_name ] ) ) {
 			$default_animation = $this->default_block_animations[ $block_name ];
-			$default_animation['source'] = 'global'; // Mark as coming from global defaults
+			// Mark as coming from global defaults
+			$default_animation['source'] = 'global';
 			return $default_animation;
 		}
 
@@ -371,9 +372,13 @@ final class Animation extends Service implements Registrable
 	 * @param int    $delay Animation delay in milliseconds.
 	 * @return string JavaScript code wrapped in script tags.
 	 */
-	private function generateScrollAnimationScript( string $element_id, int $scroll_offset, int $duration, int $delay ): string
-	{
-		$script = "
+	private function generateScrollAnimationScript(
+		string $element_id,
+		int $scroll_offset,
+		int $duration,
+		int $delay
+	): string {
+		return "
 		<script>
 		(function() {
 			const element = document.getElementById('{$element_id}');
@@ -405,8 +410,6 @@ final class Animation extends Service implements Registrable
 			observer.observe(element);
 		})();
 		</script>";
-
-		return $script;
 	}
 
 	/**
