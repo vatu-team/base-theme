@@ -32,6 +32,7 @@ final class Theme extends ServiceProvider implements Main
 	 * @var array<string>
 	 */
 	protected array $service_collection = [
+		Domain\Animation::class,
 		Domain\ArchiveTitle::class,
 		Domain\BlockEditor::class,
 		Domain\BlockPatterns::class,

@@ -57,6 +57,10 @@ module.exports = (env) => {
 			entry: {
 				...getWebpackEntryPoints,
 				...blockStylesheets(),
+				animationEditor: {
+					import: path.resolve(ThemePath, "resources/js/", "animation-editor.js"),
+					filename: "js/animation-editor.js",
+				},
 				editor: {
 					import: path.resolve(ThemePath, "resources/js/", "editor.js"),
 					filename: "js/[name].js",
@@ -70,6 +74,9 @@ module.exports = (env) => {
 				},
 				"css/editor": {
 					import: path.resolve(ThemePath, "resources/css/", "editor.css"),
+				},
+				"css/animation-editor": {
+					import: path.resolve(ThemePath, "resources/css/", "animation-editor.css"),
 				},
 			},
 			output: {
