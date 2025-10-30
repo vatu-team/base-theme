@@ -406,10 +406,11 @@
                 "sunken": "inset 0 1px 1px 0 #091e4240",
                 "default": "0 0 0 0 transparent",
                 "raised": "0 1px 1px 0 #091e4240,0 0 1px 0 #091E424F",
-                "overlay": "0 8px 12 0 #091E4226,0 0 1px 0 #091E424F"
+                "overlay": "0 8px 12px 0 #091E4226,0 0 1px 0 #091E424F"
             },
             "font-size": {
                 "body": {
+                    "xsmall": "clamp(0.75rem, 0.6591rem + 0.4545vw, 1rem)",
                     "small": "clamp(0.8889rem, 0.7981rem + 0.4541vw, 1.15rem)",
                     "medium": "clamp(1rem, 0.8478rem + 0.7609vw, 1.4375rem)",
                     "large": "clamp(1.125rem, 0.8913rem + 1.1685vw, 1.7969rem)",
@@ -524,8 +525,11 @@
                     "gap": "var( --wp--custom--spacing--04 )"
                 },
                 "site-header": {
-                    "background": "",
-                    "text": ""
+                    "padding-block": "var( --wp--custom--spacing--02 )",
+                    "background": "var( --wp--custom--color--base--neutral-05 )",
+                    "color": "var( --wp--custom--color--base--neutral-90 )",
+                    "button-background": "var( --wp--custom--color--base--neutral-90 )",
+                    "button-color": "var( --wp--custom--color--base--white )"
                 }
             }
         }

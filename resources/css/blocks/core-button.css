@@ -1,3 +1,24 @@
 /**
  * Block: Core/Button
  */
+
+.wp-block-button.is-style-primary {
+	background-color: var( --wp--custom--color--base--black );
+	color: var( --wp--custom--color--base--white );
+}
+.wp-block-button.is-style-primary:hover,
+.wp-block-button.is-style-primary:focus {
+	background-color: var( --wp--custom--theme--link--active-color );
+}
+
+.wp-block-button.is-style-primary .wp-block-button__link,
+.wp-block-button.is-style-primary .wp-block-button__link:active,
+.wp-block-button.is-style-primary .wp-block-button__link:visited,
+.wp-block-button.is-style-primary .wp-block-button__link:link {
+	color: var( --wp--custom--color--base--white );
+}
+
+.wp-block-button.is-style-primary:hover .wp-block-button__link,
+.wp-block-button.is-style-primary:focus .wp-block-button__link {
+	text-decoration: none;
+}
