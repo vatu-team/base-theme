@@ -80,7 +80,13 @@
             }
         }
     },
-    "forwardPorts": [],
+    "forwardPorts": [
+        8080,
+        8181,
+        9003,
+        13306,
+        13307
+    ],
     "postStartCommand": "chmod +x ./.devcontainer/post-start.sh && ./.devcontainer/post-start.sh",
     "remoteUser": "vscode"
 }
