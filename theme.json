@@ -530,6 +530,14 @@
                     "color": "var( --wp--custom--color--base--neutral-90 )",
                     "button-background": "var( --wp--custom--color--base--neutral-90 )",
                     "button-color": "var( --wp--custom--color--base--white )"
+                },
+                "site-footer": {
+                    "padding-block": "var( --wp--custom--spacing--07 )",
+                    "background": "var( --wp--custom--color--base--neutral-90 )",
+                    "color": "var( --wp--custom--color--base--white )",
+                    "heading-color": "var( --wp--custom--color--base--white )",
+                    "link-color": "var( --wp--custom--color--base--white )",
+                    "link-hover-color": "var( --wp--custom--color--base--neutral-05 )"
                 }
             }
         }

@@ -210,11 +210,54 @@ header:has(>.is-position-sticky) {
 /* Pattern: Site Footer
    ========================================================================== */
 
-.c-site-footer {
-	font-size: var( --wp--custom--font-size--body--small );
+.wp-block-template-part:has( .c-site-footer ) {
+	margin-block-start: 0;
 }
 
-.c-site-footer__container {
+.c-site-footer {
+	padding-block: var( --wp--custom--theme--site-footer--padding-block );
+	background-color: var( --wp--custom--theme--site-footer--background );
+	font-size: var( --wp--custom--font-size--body--small );
+	color: var( --wp--custom--theme--site-footer--color );
+}
+
+.c-site-footer__content {
+	color: var( --wp--custom--theme--site-footer--color );
+}
+
+.c-site-footer__content .wp-block-heading {
+	color: var( --wp--custom--theme--site-footer--heading-color );
+}
+
+.c-site-footer__menu .wp-block-heading {
+	margin-block-end: var( --wp--custom--spacing--04 );
+	font-size: var( --wp--custom--font-size--body--small );
+	font-weight: var( --wp--custom--font-weight--bold );
+	color: var( --wp--custom--theme--site-footer--color );
+}
+
+.c-site-footer__colophon {
+	margin-block-start: var( --wp--custom--theme--site-footer--padding-block );
+	font-size: var( --wp--custom--font-size--body--xsmall );
+}
+
+.c-site-footer__colophon .wp-block-social-links {
+
+}
+
+.c-site-footer__colophon .wp-block-social-links .wp-block-social-link.wp-social-link {
+	color: var( --wp--custom--theme--site-footer--color );
+}
+
+.wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor {
+
+}
+
+.c-site-footer__credit {
+	font-size: var( --wp--custom--font-size--body--xsmall );
+}
+
+/* .c-site-footer__container {
 	padding-block-start: var( --wp--custom--spacing--07 );
 }
 
@@ -277,7 +320,7 @@ header:has(>.is-position-sticky) {
 	.c-site-footer__info {
 		flex-direction: row;
 	}
-}
+} */
 
 /* Shame
  * CSS Hacky code that is written to get the release out that needs to be
