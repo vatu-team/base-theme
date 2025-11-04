@@ -41,6 +41,7 @@ final class Theme extends ServiceProvider implements Main
 		Domain\GlobalScripts::class,
 		Domain\GlobalStyles::class,
 		Domain\Openverse::class,
+		Domain\Patterns::class,
 		Domain\TemplateEditor::class,
 		Domain\TitleFormat::class,
 	];
