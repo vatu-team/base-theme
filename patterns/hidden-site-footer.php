@@ -28,7 +28,7 @@ declare(strict_types=1);
 		<div class="wp-block-column c-site-footer__content" style="flex-basis:40%">
 
 			<!-- wp:image {"id":173,"width":"60px","height":"60px","scale":"cover","sizeSlug":"full","linkDestination":"none"} -->
-			<figure class="wp-block-image size-full is-resized"><img src="https://docs.vatu.dev/app/uploads/sites/5/2025/08/logo-1.svg" alt="" class="wp-image-173" style="object-fit:cover;width:60px;height:60px"/></figure>
+			<figure class="wp-block-image size-full is-resized"><img src="https://docs.vatu.dev/app/uploads/sites/5/2025/08/logo.svg" alt="" class="wp-image-173" style="object-fit:cover;width:60px;height:60px"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:heading {"textAlign":"left","fontSize":"medium"} -->
@@ -36,9 +36,11 @@ declare(strict_types=1);
 			<!-- /wp:heading -->
 
 			<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"}} -->
-			<div class="wp-block-buttons"><!-- wp:button -->
-			<div class="wp-block-button"><a class="wp-block-button__link wp-element-button">Get Started</a></div>
-			<!-- /wp:button --></div>
+			<div class="wp-block-buttons">
+				<!-- wp:button {"className":"is-style-secondary"} -->
+				<div class="wp-block-button is-style-secondary"><a class="wp-block-button__link wp-element-button" href="#0">Get Started</a></div>
+				<!-- /wp:button -->
+			</div>
 			<!-- /wp:buttons -->
 		</div>
 		<!-- /wp:column -->
@@ -84,21 +86,21 @@ declare(strict_types=1);
 		<!-- wp:group {"metadata":{"name":"Colophon"},"className":"c-site-footer__colophon","align":"wide","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"space-between"}} -->
 		<div class="wp-block-group alignwide c-site-footer__colophon">
 
-			<!-- wp:group {"metadata":{"name":"Links and Social"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
+			<!-- wp:paragraph {"metadata":{"name":"Copyright","bindings":{"content":{"source":"base-theme/copyright"}}},"className":"c-site-footer__copyright"} -->
+			<p class="c-site-footer__copyright"></p>
+			<!-- /wp:paragraph -->
+
+			<!-- wp:group {"metadata":{"name":"Links"},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
 			<div class="wp-block-group">
-				<!-- wp:navigation {"maxNestingLevel":0,"overlayMenu":"never"} /-->
-
-				<!-- wp:social-links {"size":"has-normal-icon-size","className":"is-style-logos-only","style":{"spacing":{"blockGap":{"left":"12px"}}},"layout":{"type":"flex","flexWrap":"nowrap"}} -->
-				<ul class="wp-block-social-links has-normal-icon-size is-style-logos-only"><!-- wp:social-link {"url":"#","service":"facebook"} /-->
-
-				<!-- wp:social-link {"url":"#","service":"instagram"} /--></ul>
-				<!-- /wp:social-links -->
+				<!-- wp:navigation {"overlayMenu":"never"} /-->
 			</div>
 			<!-- /wp:group -->
 
-		<!-- wp:paragraph {"metadata":{"name":"Credit","bindings":{"content":{"source":"core/pattern-overrides"}}},"className":"c-site-footer__credit"} -->
-		<p class="c-site-footer__credit">Site by Vatu</p>
-		<!-- /wp:paragraph --></div>
+			<!-- wp:paragraph {"metadata":{"name":"Credit","bindings":{"content":{"source":"base-theme/credit"}}},"className":"c-site-footer__credit"} -->
+			<p class="c-site-footer__credit"><a href="https://vatu.dev">Website by Vatu</a></p>
+			<!-- /wp:paragraph -->
+
+	</div>
 		<!-- /wp:group -->
 
 	</div>

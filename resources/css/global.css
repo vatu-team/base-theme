@@ -208,6 +208,7 @@ header:has(>.is-position-sticky) {
 }
 
 /* Pattern: Site Footer
+ * 1. Ensures adequate touch target size.
    ========================================================================== */
 
 .wp-block-template-part:has( .c-site-footer ) {
@@ -230,15 +231,38 @@ header:has(>.is-position-sticky) {
 }
 
 .c-site-footer__menu .wp-block-heading {
-	margin-block-end: var( --wp--custom--spacing--04 );
+	margin-block-end: 0;
 	font-size: var( --wp--custom--font-size--body--small );
 	font-weight: var( --wp--custom--font-weight--bold );
 	color: var( --wp--custom--theme--site-footer--color );
 }
 
+.c-site-footer__menu .wp-block-navigation:not(.wp-block-navigation__container) {
+	margin-block-start: var( --wp--custom--spacing--03 );
+}
+
+.c-site-footer__menu .wp-block-navigation__container {
+	gap: var( --wp--custom--spacing--00 );
+}
+
+.c-site-footer__menu .wp-block-navigation-item {
+	font-size: var( --wp--custom--font-size--body--xsmall );
+}
+
+.c-site-footer__menu .wp-block-pages-list__item__link {
+	min-height: 48px; /* [1] */
+	align-content: center;
+}
+
 .c-site-footer__colophon {
 	margin-block-start: var( --wp--custom--theme--site-footer--padding-block );
 	font-size: var( --wp--custom--font-size--body--xsmall );
+}
+
+@media ( max-width: 900px ) {
+	.c-site-footer__colophon {
+		flex-direction: row;
+	}
 }
 
 .c-site-footer__colophon .wp-block-social-links {
@@ -249,17 +273,13 @@ header:has(>.is-position-sticky) {
 	color: var( --wp--custom--theme--site-footer--color );
 }
 
-.wp-block-social-links .wp-block-social-link.wp-social-link .wp-block-social-link-anchor {
 
-}
 
 .c-site-footer__credit {
 	font-size: var( --wp--custom--font-size--body--xsmall );
 }
 
-/* .c-site-footer__container {
-	padding-block-start: var( --wp--custom--spacing--07 );
-}
+/*
 
 @media screen and ( min-width: 560px ) {
 	.c-site-footer__content {

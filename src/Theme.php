@@ -37,6 +37,7 @@ final class Theme extends ServiceProvider implements Main
 		Domain\BlockPatterns::class,
 		Domain\BlockStyles::class,
 		Domain\CodeEditor::class,
+		Domain\Copyright::class,
 		Domain\EditorScript::class,
 		Domain\GlobalScripts::class,
 		Domain\GlobalStyles::class,
