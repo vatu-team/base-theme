@@ -5,8 +5,8 @@
     "author": "Vatu <info@vatu.dev>",
     "license": "MIT",
     "engines": {
-        "npm": "^10.1.0",
-        "node": "^20.9.0"
+        "npm": "^11.6",
+        "node": "^24.11"
     },
     "scripts": {
         "build": "run-p 'build:theme'",

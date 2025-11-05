@@ -18,8 +18,8 @@ concurrency:
 
 jobs:
 
-  license:
-    name: 'Check licenses are compatible.'
+  php-license:
+    name: 'PHP Check licenses are compatible.'
     runs-on: 'ubuntu-24.04'
 
     strategy:
@@ -74,7 +74,7 @@ jobs:
         run: |
           composer run test:license
 
-  security:
+  php-security:
     name: 'PHP Security Analysis'
     runs-on: 'ubuntu-24.04'
 
@@ -130,8 +130,8 @@ jobs:
         run: |
           composer run test:security
 
-  validate:
-    name: 'Validate'
+  php-validate:
+    name: 'PHP Validate'
     runs-on: 'ubuntu-24.04'
 
     strategy:
@@ -165,8 +165,8 @@ jobs:
         run: |
           composer validate --ansi --strict
 
-  coding-standard:
-    name: 'Coding Standard'
+  php-coding-standard:
+    name: 'PHP Coding Standard'
     needs:
      - 'license'
      - 'security'
@@ -224,12 +224,12 @@ jobs:
         run: |
           composer run test:lint:coding-standards
 
-  static-analysis:
-    name: 'Static Analysis'
+  php-static-analysis:
+    name: 'PHP Static Analysis'
     needs:
-     - 'license'
-     - 'security'
-     - 'validate'
+     - 'php-license'
+     - 'php-security'
+     - 'php-validate'
     runs-on: 'ubuntu-24.04'
 
     strategy:
@@ -282,12 +282,12 @@ jobs:
         run: |
           composer run test:analysis
 
-  compatibility:
-    name: 'Compatiblity Tests'
+  php-compatibility:
+    name: 'PHP Compatiblity Tests'
     needs:
-     - 'license'
-     - 'security'
-     - 'validate'
+     - 'php-license'
+     - 'php-security'
+     - 'php-validate'
     continue-on-error: ${{ matrix.experimental }}
     runs-on: 'ubuntu-24.04'
 
@@ -344,9 +344,9 @@ jobs:
           composer run test:compatibility -- --runtime-set testVersion ${{ matrix.php-version }}
 
   # code-coverage:
-  #   name: 'Code Coverage'
+  #   name: 'PHP Code Coverage'
   #   needs:
-  #    - 'unit-tests'
+  #    - 'php-unit-tests'
   #   runs-on: 'ubuntu-24.04'
 
   #   strategy:
@@ -404,12 +404,12 @@ jobs:
   #         files: build/logs/clover.xml
   #         token: ${{ secrets.CODECOV_TOKEN }}
 
-  unit-tests:
-    name: 'Unit Tests'
+  php-unit-tests:
+    name: 'PHP Unit Tests'
     needs:
-      - 'coding-standard'
-      - 'static-analysis'
-      - 'compatibility'
+      - 'php-coding-standard'
+      - 'php-static-analysis'
+      - 'php-compatibility'
     continue-on-error: ${{ matrix.experimental }}
     runs-on: 'ubuntu-24.04'
 
@@ -464,3 +464,38 @@ jobs:
       - name: 'Run Unit tests.'
         run: |
           composer run test:unit -- --colors=always --no-coverage
+
+  npm-security:
+    name: 'NPM Security Analysis'
+    runs-on: 'ubuntu-24.04'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        node-version: ['24']
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v5.0.0'
+
+      - name: 'Set up Node environment.'
+        uses: 'actions/setup-node@v6.0.0'
+        with:
+          node-version: "${{ matrix.node-version }}"
+          token: ${{ secrets.github-token }}
+          cache: 'npm'
+
+      - name: 'Logs debug information.'
+        run: |
+          node --version
+          npm --version
+
+      - name: 'Install dependencies.'
+        run: |
+          npm install
+
+      - name: 'Run security test.'
+        run: |
+          npm audit --only=prod
