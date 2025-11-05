@@ -168,9 +168,9 @@ jobs:
   php-coding-standard:
     name: 'PHP Coding Standard'
     needs:
-     - 'license'
-     - 'security'
-     - 'validate'
+     - 'php-license'
+     - 'php-security'
+     - 'php-validate'
     runs-on: 'ubuntu-24.04'
 
     strategy:
