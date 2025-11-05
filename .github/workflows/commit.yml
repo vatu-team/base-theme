@@ -465,6 +465,41 @@ jobs:
         run: |
           composer run test:unit -- --colors=always --no-coverage
 
+  npm-license:
+    name: 'NPM Check licenses are compatible.'
+    runs-on: 'ubuntu-24.04'
+
+    strategy:
+      fail-fast: true
+      max-parallel: 1
+      matrix:
+        node-version: ['24']
+
+    steps:
+
+      - name: 'Check out the repository.'
+        uses: 'actions/checkout@v5.0.0'
+
+      - name: 'Set up Node environment.'
+        uses: 'actions/setup-node@v6.0.0'
+        with:
+          node-version: "${{ matrix.node-version }}"
+          token: ${{ secrets.github-token }}
+          cache: 'npm'
+
+      - name: 'Logs debug information.'
+        run: |
+          node --version
+          npm --version
+
+      - name: 'Install dependencies.'
+        run: |
+          npm install
+
+      - name: 'Run security test.'
+        run: |
+          npx license-checker --onlyAllow "BSD-2-Clause;BSD-3-Clause;GPL-2.0-or-later;LGPL-3.0-or-later;MIT;ISC;Apache-2.0;CC0-1.0;Python-2.0;MPL-2.0;Public Domain" --production
+
   npm-security:
     name: 'NPM Security Analysis'
     runs-on: 'ubuntu-24.04'
