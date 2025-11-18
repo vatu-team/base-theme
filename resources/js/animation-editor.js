@@ -337,10 +337,19 @@ const AnimationControls = (props) => {
 };
 
 const addAnimationControls = (BlockEdit) => (props) => {
+	// Get the current block name to check if it's supported
+	const blockName = useSelect((select) => {
+		const { getBlockName } = select('core/block-editor');
+		return getBlockName(props.clientId);
+	}, [props.clientId]);
+
+	// Check if this block type is supported for animations
+	const isSupported = l10n.supportedBlocks && l10n.supportedBlocks.includes(blockName);
+
 	return (
 		<>
 			<BlockEdit {...props} />
-			<AnimationControls {...props} />
+			{isSupported && <AnimationControls {...props} />}
 		</>
 	);
 };
