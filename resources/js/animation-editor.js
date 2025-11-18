@@ -116,10 +116,35 @@ const AnimationControls = (props) => {
 	};
 
 	const updateAnimation = (key, value) => {
-		// If animation type is being set to empty/none, clear the entire animation attribute
-		if (key === 'type' && (!value || value === '')) {
+		// Handle "Global" selection (empty value) - remove animation attribute to use global defaults
+		if (key === 'type' && value === '') {
 			setAttributes({
-				animation: undefined, // Remove the animation attribute entirely
+				animation: undefined, // Remove the animation attribute entirely to use global defaults
+			});
+
+			// Remove animation classes from DOM element
+			const blockElement = document.querySelector(`[data-block="${clientId}"]`);
+			if (blockElement) {
+				// Remove all animate classes
+				const existingClasses = blockElement.className.split(' ').filter(cls =>
+					!cls.startsWith('animate__')
+				);
+				blockElement.className = existingClasses.join(' ').trim();
+
+				// Remove CSS custom properties
+				blockElement.style.removeProperty('--animate-duration');
+				blockElement.style.removeProperty('--animate-delay');
+			}
+			return;
+		}
+
+		// Handle "None" selection - explicitly save to override any global defaults
+		if (key === 'type' && value === 'none') {
+			setAttributes({
+				animation: {
+					source: 'block',
+					type: 'none', // Explicitly set to none to override global defaults
+				},
 			});
 
 			// Remove animation classes from DOM element
@@ -174,7 +199,8 @@ const AnimationControls = (props) => {
 	};
 
 	const animationTypes = [
-		{ label: __('None', 'base-theme'), value: '' },
+		{ label: __('None', 'base-theme'), value: 'none' },
+		{ label: __('Global', 'base-theme'), value: '' },
 		...Object.entries(l10n.supportedAnimateCssAnimations).map(([value, label]) => ({
 			label,
 			value
@@ -191,8 +217,8 @@ const AnimationControls = (props) => {
 		const blockElement = document.querySelector(`[data-block="${clientId}"]`);
 		if (!blockElement) return;
 
-		// If no animation type, clean up any existing animation classes
-		if (!animationSettings.type) {
+		// If no animation type or explicitly set to "none", clean up any existing animation classes
+		if (!animationSettings.type || animationSettings.type === 'none') {
 			// Remove all animate classes
 			const existingClasses = blockElement.className.split(' ').filter(cls =>
 				!cls.startsWith('animate__')
@@ -223,7 +249,7 @@ const AnimationControls = (props) => {
 				title={__('Animation', 'base-theme')}
 				initialOpen={false}
 			>
-				{animationSettings.type && (
+				{animationSettings.type && animationSettings.type !== 'none' && (
 					<PanelRow>
 						<button
 							className="button button-secondary"
@@ -254,7 +280,7 @@ const AnimationControls = (props) => {
 					/>
 				</PanelRow>
 
-				{animationSettings.type && (
+				{animationSettings.type && animationSettings.type !== 'none' && (
 					<>
 						<PanelRow>
 							<SelectControl

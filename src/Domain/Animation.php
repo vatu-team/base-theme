@@ -336,22 +336,24 @@ final class Animation extends Service implements Registrable
 		if (
 			! empty( $block_animation ) &&
 			! empty( $block_animation['type'] ) &&
+			$block_animation['type'] !== 'none' &&
 			( $block_animation['source'] ?? 'block' ) === 'block'
 		) {
 			return $block_animation;
 		}
 
-		// If block has explicit empty animation (user chose "None"), respect that
+		// If block has explicit "none" animation (user chose "None"), respect that
 		if (
 			! empty( $block_animation ) &&
-			empty( $block_animation['type'] ) &&
+			$block_animation['type'] === 'none' &&
 			( $block_animation['source'] ?? 'block' ) === 'block'
 		) {
-			// Explicit "no animation"
+			// Explicit "no animation" - override any global defaults
 			return null;
 		}
 
-		// Check if this block type has default animations
+		// If block animation is empty or null, check for global defaults
+		// This handles the "Global" selection case
 		if ( isset( $this->default_block_animations[ $block_name ] ) ) {
 			$default_animation = $this->default_block_animations[ $block_name ];
 			// Mark as coming from global defaults
