@@ -31,6 +31,8 @@ final class Animation extends Service implements Registrable
 		'core/group',
 		'core/image',
 		'core/video',
+		'core/columns',
+		'core/column',
 	];
 
 	/**
@@ -47,6 +49,7 @@ final class Animation extends Service implements Registrable
 		'fadeInLeft' => 'Fade In Left',
 		'fadeInRight' => 'Fade In Right',
 		'fadeInUp' => 'Fade In Up',
+		'zoomIn' => 'Zoom In',
 	];
 
 	/**
