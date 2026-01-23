@@ -31,7 +31,7 @@ jobs:
     steps:
 
       - name: 'Check out the repository.'
-        uses: 'actions/checkout@v6.0.1'
+        uses: 'actions/checkout@v6.0.2'
 
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.36.0'
@@ -87,7 +87,7 @@ jobs:
     steps:
 
       - name: 'Check out the repository.'
-        uses: 'actions/checkout@v6.0.1'
+        uses: 'actions/checkout@v6.0.2'
 
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.36.0'
@@ -143,7 +143,7 @@ jobs:
     steps:
 
       - name: 'Check out the repository.'
-        uses: 'actions/checkout@v6.0.1'
+        uses: 'actions/checkout@v6.0.2'
 
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.36.0'
@@ -182,7 +182,7 @@ jobs:
     steps:
 
       - name: 'Check out the repository.'
-        uses: 'actions/checkout@v6.0.1'
+        uses: 'actions/checkout@v6.0.2'
 
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.36.0'
@@ -242,7 +242,7 @@ jobs:
     steps:
 
       - name: 'Check out the repository.'
-        uses: 'actions/checkout@v6.0.1'
+        uses: 'actions/checkout@v6.0.2'
 
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.36.0'
@@ -304,7 +304,7 @@ jobs:
     steps:
 
       - name: 'Check out the repository.'
-        uses: 'actions/checkout@v6.0.1'
+        uses: 'actions/checkout@v6.0.2'
 
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.36.0'
@@ -359,7 +359,7 @@ jobs:
   #   steps:
 
   #     - name: 'Check out the repository.'
-  #       uses: 'actions/checkout@v6.0.1'
+  #       uses: 'actions/checkout@v6.0.2'
 
   #     - name: 'Set up PHP environment.'
   #       uses: 'shivammathur/setup-php@2.36.0'
@@ -426,7 +426,7 @@ jobs:
     steps:
 
       - name: 'Check out the repository.'
-        uses: 'actions/checkout@v6.0.1'
+        uses: 'actions/checkout@v6.0.2'
 
       - name: 'Set up PHP environment.'
         uses: 'shivammathur/setup-php@2.36.0'
@@ -478,7 +478,7 @@ jobs:
     steps:
 
       - name: 'Check out the repository.'
-        uses: 'actions/checkout@v6.0.1'
+        uses: 'actions/checkout@v6.0.2'
 
       - name: 'Set up Node environment.'
         uses: 'actions/setup-node@v6.2.0'
@@ -513,7 +513,7 @@ jobs:
     steps:
 
       - name: 'Check out the repository.'
-        uses: 'actions/checkout@v6.0.1'
+        uses: 'actions/checkout@v6.0.2'
 
       - name: 'Set up Node environment.'
         uses: 'actions/setup-node@v6.2.0'
