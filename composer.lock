@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "48d3e6d31e053ff5d1c2820821642931",
+    "content-hash": "6b9766d395e98c6a7036ef281a9e0601",
     "packages": [
         {
             "name": "composer/installers",
@@ -1146,16 +1146,16 @@
     "packages-dev": [
         {
             "name": "captainhook/captainhook",
-            "version": "5.29.0",
+            "version": "5.29.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/captainhook-git/captainhook.git",
-                "reference": "ae6b2172e2865a572d6237235f66e652f05fe0f1"
+                "reference": "739e317c6f6cd9bf86f5c4795795c93d7785c7b3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/captainhook-git/captainhook/zipball/ae6b2172e2865a572d6237235f66e652f05fe0f1",
-                "reference": "ae6b2172e2865a572d6237235f66e652f05fe0f1",
+                "url": "https://api.github.com/repos/captainhook-git/captainhook/zipball/739e317c6f6cd9bf86f5c4795795c93d7785c7b3",
+                "reference": "739e317c6f6cd9bf86f5c4795795c93d7785c7b3",
                 "shasum": ""
             },
             "require": {
@@ -1218,7 +1218,7 @@
             ],
             "support": {
                 "issues": "https://github.com/captainhook-git/captainhook/issues",
-                "source": "https://github.com/captainhook-git/captainhook/tree/5.29.0"
+                "source": "https://github.com/captainhook-git/captainhook/tree/5.29.1"
             },
             "funding": [
                 {
@@ -1226,7 +1226,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-03-22T09:20:04+00:00"
+            "time": "2026-03-25T00:09:07+00:00"
         },
         {
             "name": "captainhook/hook-installer",
