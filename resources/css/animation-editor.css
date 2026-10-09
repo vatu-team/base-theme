@@ -1,0 +1,12 @@
+/*
+ * Disable animations in editor contexts ONLY when preview classes are absent.
+ * This selector is more specific than Animate.css's .animate__jello etc.
+ * so it will override, but only when the :not() conditions are met.
+ */
+.block-editor-block-list__layout .animate__animated:not(.animate__preview):not(.animate__preview-temp),
+iframe[name="editor-canvas"] .animate__animated:not(.animate__preview):not(.animate__preview-temp) {
+	animation: none !important;
+	animation-duration: 0s !important;
+	animation-delay: 0s !important;
+}
+
